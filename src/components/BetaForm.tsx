@@ -11,17 +11,36 @@ export const BetaForm: React.FC = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.fullName || !formData.email || !formData.painPoint) return;
 
     setIsSubmitting(true);
-    // Simulate high-fidelity backend submission to firestore / lambda hooks
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/request-sandbox', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error || 'Failed to request sandbox access.');
+      }
+
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err: any) {
+      console.error('Submission error:', err);
+      setErrorMessage(err?.message || 'An error occurred during submission. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -111,6 +130,12 @@ export const BetaForm: React.FC = () => {
                   />
                 </div>
 
+                {errorMessage && (
+                  <p className="text-xs font-mono text-red-400 bg-red-950/40 border border-red-900/50 p-3 rounded-lg text-center">
+                    {errorMessage}
+                  </p>
+                )}
+
                 {/* Full Width Azure Submit Button */}
                 <button
                   type="submit"
@@ -120,7 +145,7 @@ export const BetaForm: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Validating Credentials...
+                      Processing...
                     </>
                   ) : (
                     <>
@@ -135,21 +160,21 @@ export const BetaForm: React.FC = () => {
                 key="beta-success"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-8 space-y-4"
+                className="text-center py-8 space-y-5"
               >
                 <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mx-auto animate-pulse">
                   <ShieldCheck className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold font-mono uppercase text-emerald-400 tracking-wider">
-                    Application Logged Successfully
+                  <h4 className="text-base font-bold font-mono uppercase text-emerald-400 tracking-wider">
+                    Validation Request Logged
                   </h4>
-                  <p className="text-xs text-slate-400 mt-2 font-mono leading-relaxed">
-                    Token: #SEC-{Date.now().toString().slice(-6)}-PENDING
+                  <p className="text-[10px] text-slate-500 mt-1.5 font-mono tracking-widest">
+                    SYSTEM ID: #SEC-{Date.now().toString().slice(-6)}-VERIFIED
                   </p>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed max-w-sm mx-auto font-sans">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Our governance architecture committee will review your submission matching <span className="text-sky-400 font-semibold">{formData.email}</span> within 24 hours.
+                <p className="text-xs text-slate-200 leading-relaxed max-w-sm mx-auto font-sans font-medium">
+                  The telemetry architecture engine has successfully simulated your sandbox intake profile.
                 </p>
               </motion.div>
             )}
