@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, EyeOff, ShieldCheck, Database, Key, Layers, ArrowDown } from 'lucide-react';
+import { Cpu, EyeOff, ShieldCheck, Database, Key, Layers, ChevronDown } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Architecture: React.FC = () => {
@@ -12,15 +12,15 @@ export const Architecture: React.FC = () => {
   ];
 
   const diagramNodes = [
-    { title: 'Agent Layer', desc: 'Autonomous LLM execution containers', color: 'border-sky-500/30 text-sky-400 bg-sky-950/20' },
-    { title: 'Policy Engine', desc: 'Real-time validation against regulatory frameworks', color: 'border-cyan-500/30 text-cyan-400 bg-cyan-950/20' },
-    { title: 'Risk Evaluation', desc: 'Dynamic behavior drift & prompt injection analysis', color: 'border-amber-500/30 text-amber-400 bg-amber-950/20' },
-    { title: 'Governance Controls', desc: 'Circuit breakers & automated quarantining layers', color: 'border-rose-500/30 text-rose-400 bg-rose-950/20' },
-    { title: 'Audit Evidence Layer', desc: 'Cryptographically signed audit trail ledger', color: 'border-emerald-500/30 text-emerald-400 bg-emerald-950/20' },
+    { title: 'Agent Layer', desc: 'Autonomous LLM execution containers', accent: 'border-l-sky-500' },
+    { title: 'Policy Engine', desc: 'Real-time validation against regulatory frameworks', accent: 'border-l-cyan-400' },
+    { title: 'Risk Evaluation', desc: 'Dynamic behavior drift & prompt injection analysis', accent: 'border-l-sky-500' },
+    { title: 'Governance Controls', desc: 'Circuit breakers & automated quarantining layers', accent: 'border-l-cyan-400' },
+    { title: 'Audit Evidence Layer', desc: 'Cryptographically signed audit trail ledger', accent: 'border-l-sky-500' },
   ];
 
   return (
-    <section id="architecture" className="py-24 px-6 lg:px-12 bg-[#0B131E] relative border-t border-slate-900/60">
+    <section id="architecture" className="py-24 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60">
       {/* Background decoration dots */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-sky-500/5 rounded-full filter blur-[120px] pointer-events-none -translate-y-1/2" />
 
@@ -82,11 +82,11 @@ export const Architecture: React.FC = () => {
               {diagramNodes.map((node, idx) => (
                 <div key={idx} className="flex flex-col items-center">
                   {/* Schematic card */}
-                  <div className={`w-full max-w-sm rounded-xl border p-4 flex flex-col items-center text-center shadow-md ${node.color} backdrop-blur-sm transition-all duration-300 hover:border-slate-500/40`}>
-                    <span className="text-[10px] font-mono uppercase tracking-widest font-extrabold opacity-70 mb-1">
+                  <div className={`w-full max-w-sm rounded-xl border border-slate-800 border-l-4 ${node.accent} bg-slate-900/30 p-4 flex flex-col items-start text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-slate-700/80`}>
+                    <span className="text-[9px] font-mono uppercase tracking-widest font-extrabold text-slate-500 mb-1">
                       0{idx + 1} / NODE
                     </span>
-                    <h5 className="text-xs font-bold uppercase tracking-wider">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-white">
                       {node.title}
                     </h5>
                     <p className="text-[10px] text-slate-400 mt-1 font-sans">
@@ -94,11 +94,10 @@ export const Architecture: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Flow Arrow down */}
+                  {/* Flow Chevron down */}
                   {idx < diagramNodes.length - 1 && (
-                    <div className="my-2 text-slate-600 flex flex-col items-center justify-center">
-                      <div className="w-0.5 h-4 bg-gradient-to-b from-slate-700 to-transparent" />
-                      <ArrowDown className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <div className="my-1.5 text-slate-600 flex flex-col items-center justify-center">
+                      <ChevronDown className="w-4 h-4 text-sky-400/70" />
                     </div>
                   )}
                 </div>

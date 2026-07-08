@@ -19,7 +19,7 @@ export const OpenSource: React.FC = () => {
   };
 
   return (
-    <section id="open-source" className="py-24 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60">
+    <section id="open-source" className="py-24 px-6 lg:px-12 bg-[#0D1927] relative border-t border-slate-900/60">
       {/* Background glow decoration */}
       <div className="absolute bottom-1/2 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-[150px] pointer-events-none" />
 

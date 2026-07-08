@@ -77,23 +77,23 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto border-t border-slate-900/60"
+          className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-slate-900/60"
         >
           <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">99.99%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1">Interception Rate</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">&lt; 15ms</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1">Gateway Overhead</div>
-          </div>
-          <div>
             <div className="text-2xl md:text-3xl font-bold font-mono text-white">100%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1">Residency Isolation</div>
+            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Data Sovereignty & PIPEDA Compliance Verified</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">4+</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1">Active Frameworks</div>
+            <div className="text-2xl md:text-3xl font-bold font-mono text-white">0%</div>
+            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Production Environment Penetration Required</div>
+          </div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold font-mono text-white">40+</div>
+            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Pre-Configured Autonomous Agent Guardrails</div>
+          </div>
+          <div>
+            <div className="text-2xl md:text-3xl font-bold font-mono text-white">$0</div>
+            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Upfront Implementation Overhead</div>
           </div>
         </motion.div>
       </div>

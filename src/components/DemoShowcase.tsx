@@ -164,7 +164,7 @@ export const DemoShowcase: React.FC = () => {
   const activeInterventionsCount = incidents.filter(i => i.severity === 'critical' || i.severity === 'high').length * 12 + 14;
 
   return (
-    <section id="demo" className="py-20 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60">
+    <section id="demo" className="py-20 px-6 lg:px-12 bg-[#0D1927] relative border-t border-slate-900/60">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
@@ -181,7 +181,7 @@ export const DemoShowcase: React.FC = () => {
         </div>
 
         {/* Browser Frame Structure */}
-        <div className="bg-slate-900 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col h-[750px] relative">
+        <div className="max-w-6xl mx-auto w-full bg-slate-900 rounded-2xl border border-slate-800 shadow-[0_0_50px_rgba(0,120,212,0.15)] overflow-hidden flex flex-col h-[850px] relative">
           
           {/* Header Bar */}
           <div className="h-11 bg-slate-950 px-4 flex items-center justify-between border-b border-slate-800/80 shrink-0 select-none">

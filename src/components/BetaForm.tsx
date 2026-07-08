@@ -25,7 +25,7 @@ export const BetaForm: React.FC = () => {
   };
 
   return (
-    <section id="beta-form" className="py-24 px-6 lg:px-12 bg-[#0B131E] relative border-t border-slate-900/60 flex flex-col items-center justify-center">
+    <section id="beta-form" className="py-24 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60 flex flex-col items-center justify-center">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full filter blur-[140px] pointer-events-none" />
 
@@ -59,8 +59,8 @@ export const BetaForm: React.FC = () => {
               >
                 {/* Field 1: Full Name */}
                 <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-slate-500" />
+                  <label htmlFor="fullName" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5 text-slate-400" />
                     Full Name
                   </label>
                   <input
@@ -70,14 +70,14 @@ export const BetaForm: React.FC = () => {
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="Enter your executive name"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-650 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200"
                   />
                 </div>
 
                 {/* Field 2: Corporate Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
-                    <Mail className="w-3.5 h-3.5 text-slate-500" />
+                  <label htmlFor="email" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-slate-400" />
                     Corporate Email
                   </label>
                   <input
@@ -87,14 +87,14 @@ export const BetaForm: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="name@company.com"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-650 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200"
                   />
                 </div>
 
                 {/* Field 3: Primary AI Security Pain Point */}
                 <div className="space-y-2">
-                  <label htmlFor="painPoint" className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
-                    <ShieldAlert className="w-3.5 h-3.5 text-slate-500" />
+                  <label htmlFor="painPoint" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
+                    <ShieldAlert className="w-3.5 h-3.5 text-slate-400" />
                     Primary AI Security Pain Point
                   </label>
                   <textarea
@@ -104,7 +104,7 @@ export const BetaForm: React.FC = () => {
                     value={formData.painPoint}
                     onChange={(e) => setFormData({ ...formData, painPoint: e.target.value })}
                     placeholder="Briefly describe your principal LLM safety or residency concern (e.g. prompt injection, unmasked PII, data exfiltration)"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-650 transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200 resize-none"
                   />
                 </div>
 
