@@ -26,8 +26,8 @@ export const BetaForm: React.FC = () => {
 
   return (
     <section id="beta-form" className="py-24 px-6 lg:px-12 bg-slate-950 relative border-t border-slate-900/60 flex flex-col items-center justify-center">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full filter blur-[140px] pointer-events-none" />
+      {/* Background ambient lighting - enhanced for high visibility and centering the form */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-sky-500/20 to-cyan-500/15 rounded-full filter blur-[130px] pointer-events-none" />
 
       <div className="max-w-xl w-full mx-auto space-y-10 relative z-10">
         
@@ -44,8 +44,11 @@ export const BetaForm: React.FC = () => {
           </p>
         </div>
 
-        {/* Minimalist Enterprise Form Container */}
-        <div className="bg-slate-950/60 rounded-2xl border border-slate-800 shadow-xl p-6 sm:p-8 relative overflow-hidden">
+        {/* High-Contrast Premium Enterprise Form Container with a vibrant Cyber Glow & Accent Line */}
+        <div className="bg-[#050C16] rounded-2xl border-2 border-sky-400/40 shadow-[0_0_80px_rgba(14,165,233,0.3)] p-6 sm:p-8 relative overflow-hidden transition-all duration-300 hover:border-sky-400 hover:shadow-[0_0_100px_rgba(14,165,233,0.45)]">
+          
+          {/* Top Edge Neon Accent Line */}
+          <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400" />
           
           <AnimatePresence mode="wait">
             {!isSubmitted ? (
@@ -59,8 +62,8 @@ export const BetaForm: React.FC = () => {
               >
                 {/* Field 1: Full Name */}
                 <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-slate-400" />
+                  <label htmlFor="fullName" className="text-[10px] font-mono uppercase tracking-wider text-slate-200 font-bold flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5 text-sky-400" />
                     Full Name
                   </label>
                   <input
@@ -70,14 +73,14 @@ export const BetaForm: React.FC = () => {
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="Enter your executive name"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200"
+                    className="w-full px-4 py-3.5 bg-[#081220] border border-slate-700/80 hover:border-slate-500 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-450 focus:ring-4 focus:ring-sky-500/20 placeholder:text-slate-500 transition-all duration-200"
                   />
                 </div>
 
                 {/* Field 2: Corporate Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                    <Mail className="w-3.5 h-3.5 text-slate-400" />
+                  <label htmlFor="email" className="text-[10px] font-mono uppercase tracking-wider text-slate-200 font-bold flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-sky-400" />
                     Corporate Email
                   </label>
                   <input
@@ -87,14 +90,14 @@ export const BetaForm: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="name@company.com"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200"
+                    className="w-full px-4 py-3.5 bg-[#081220] border border-slate-700/80 hover:border-slate-500 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-450 focus:ring-4 focus:ring-sky-500/20 placeholder:text-slate-500 transition-all duration-200"
                   />
                 </div>
 
                 {/* Field 3: Primary AI Security Pain Point */}
                 <div className="space-y-2">
-                  <label htmlFor="painPoint" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                    <ShieldAlert className="w-3.5 h-3.5 text-slate-400" />
+                  <label htmlFor="painPoint" className="text-[10px] font-mono uppercase tracking-wider text-slate-200 font-bold flex items-center gap-1.5">
+                    <ShieldAlert className="w-3.5 h-3.5 text-sky-400" />
                     Primary AI Security Pain Point
                   </label>
                   <textarea
@@ -104,7 +107,7 @@ export const BetaForm: React.FC = () => {
                     value={formData.painPoint}
                     onChange={(e) => setFormData({ ...formData, painPoint: e.target.value })}
                     placeholder="Briefly describe your principal LLM safety or residency concern (e.g. prompt injection, unmasked PII, data exfiltration)"
-                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-slate-200 focus:outline-none focus:ring-1 focus:ring-sky-500/50 focus:border-sky-500/50 placeholder:text-slate-400 transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3.5 bg-[#081220] border border-slate-700/80 hover:border-slate-500 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-450 focus:ring-4 focus:ring-sky-500/20 placeholder:text-slate-500 transition-all duration-200 resize-none"
                   />
                 </div>
 
@@ -112,7 +115,7 @@ export const BetaForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/10"
+                  className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-450 hover:to-cyan-450 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 hover:shadow-sky-400/35 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {isSubmitting ? (
                     <>
