@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="max-w-2xl mx-auto text-slate-300 text-base md:text-xl leading-relaxed font-sans"
+          className="max-w-2xl mx-auto text-slate-100 text-base md:text-xl leading-relaxed font-sans font-medium"
         >
           Continuous compliance, real-time policy interception, and identity-aware security for enterprise LLM workflows and autonomous agents. Built for highly regulated industries.
         </motion.p>
@@ -65,9 +65,9 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           
           <button
             onClick={() => onScrollToSection('open-source')}
-            className="w-full sm:w-auto px-7 py-3.5 bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-7 py-3.5 bg-transparent border border-slate-600 hover:border-slate-400 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 cursor-pointer flex items-center justify-center gap-2"
           >
-            <Terminal className="w-4 h-4 text-slate-400" />
+            <Terminal className="w-4 h-4 text-slate-300" />
             View Open-Source Engine
           </button>
         </motion.div>
@@ -77,23 +77,23 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-slate-900/60"
+          className="pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto border-t border-slate-900/60"
         >
-          <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">100%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Data Sovereignty & PIPEDA Compliance Verified</div>
+          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
+            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">100%</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Data Sovereignty & PIPEDA Compliance Verified</div>
           </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">0%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Production Environment Penetration Required</div>
+          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
+            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">0%</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Production Environment Penetration Required</div>
           </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">40+</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Pre-Configured Autonomous Agent Guardrails</div>
+          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
+            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">40+</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Pre-Configured Autonomous Agent Guardrails</div>
           </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold font-mono text-white">$0</div>
-            <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider mt-1 leading-relaxed">Upfront Implementation Overhead</div>
+          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
+            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">$0</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Upfront Implementation Overhead</div>
           </div>
         </motion.div>
       </div>

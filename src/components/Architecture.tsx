@@ -20,7 +20,7 @@ export const Architecture: React.FC = () => {
   ];
 
   return (
-    <section id="architecture" className="py-24 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60">
+    <section id="architecture" className="py-24 px-6 lg:px-12 bg-slate-950 relative border-t border-slate-900/60">
       {/* Background decoration dots */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-sky-500/5 rounded-full filter blur-[120px] pointer-events-none -translate-y-1/2" />
 
@@ -44,7 +44,7 @@ export const Architecture: React.FC = () => {
               <h4 className="text-lg font-bold text-white tracking-wide uppercase font-mono">
                 Dual-Engine Enforcement Architecture
               </h4>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-100 text-sm leading-relaxed font-medium">
                 Bastion Audit enables organizations to validate AI governance workflows without exposing production environments. Test compliance limits and evaluate gateway response profiles directly inside our sandbox frameworks.
               </p>
             </div>
@@ -54,7 +54,7 @@ export const Architecture: React.FC = () => {
               {highlights.map((h, index) => {
                 const Icon = h.icon;
                 return (
-                  <li key={index} className="flex items-center gap-3.5 text-xs text-slate-300 font-medium">
+                  <li key={index} className="flex items-center gap-3.5 text-xs text-slate-200 font-medium">
                     <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
                       <Icon className="w-4 h-4" />
                     </div>
@@ -66,14 +66,14 @@ export const Architecture: React.FC = () => {
 
             {/* Core Message Callout */}
             <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-5 mt-4">
-              <p className="text-xs text-slate-400 leading-relaxed italic">
+              <p className="text-xs text-slate-300 leading-relaxed italic">
                 &ldquo;Organizations can evaluate enterprise AI security controls without waiting through traditional six-month procurement and integration cycles.&rdquo;
               </p>
             </div>
           </div>
 
           {/* Right Column - Beautiful Architecture Diagram schematic */}
-          <div className="bg-[#131E2B]/85 rounded-2xl border border-slate-850 p-6 shadow-xl relative overflow-hidden flex flex-col justify-center min-h-[450px]">
+          <div className="bg-slate-900/60 rounded-2xl border border-slate-800 p-6 shadow-xl relative overflow-hidden flex flex-col justify-center min-h-[450px]">
             {/* Dots background grid for schematic looks */}
             <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-40" />
 
@@ -82,14 +82,14 @@ export const Architecture: React.FC = () => {
               {diagramNodes.map((node, idx) => (
                 <div key={idx} className="flex flex-col items-center">
                   {/* Schematic card */}
-                  <div className={`w-full max-w-sm rounded-xl border border-slate-800 border-l-4 ${node.accent} bg-slate-900/30 p-4 flex flex-col items-start text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-slate-700/80`}>
-                    <span className="text-[9px] font-mono uppercase tracking-widest font-extrabold text-slate-500 mb-1">
+                  <div className={`w-full max-w-sm rounded-xl border border-slate-800 border-l-4 ${node.accent} bg-slate-950/50 p-4 flex flex-col items-start text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-slate-700/80`}>
+                    <span className="text-[9px] font-mono uppercase tracking-widest font-extrabold text-slate-400 mb-1">
                       0{idx + 1} / NODE
                     </span>
-                    <h5 className="text-xs font-bold uppercase tracking-wider text-white">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-white font-semibold">
                       {node.title}
                     </h5>
-                    <p className="text-[10px] text-slate-400 mt-1 font-sans">
+                    <p className="text-[10px] text-slate-300 mt-1 font-sans">
                       {node.desc}
                     </p>
                   </div>

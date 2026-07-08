@@ -164,7 +164,7 @@ export const DemoShowcase: React.FC = () => {
   const activeInterventionsCount = incidents.filter(i => i.severity === 'critical' || i.severity === 'high').length * 12 + 14;
 
   return (
-    <section id="demo" className="py-20 px-6 lg:px-12 bg-[#0D1927] relative border-t border-slate-900/60">
+    <section id="demo" className="py-20 px-6 lg:px-12 bg-[#212F45] relative border-t border-slate-900/60">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
@@ -175,7 +175,7 @@ export const DemoShowcase: React.FC = () => {
           <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white font-sans">
             AI Control Plane Sandbox
           </h3>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <p className="text-slate-100 text-sm leading-relaxed font-medium">
             Take command of our high-fidelity secure gateway operations console. Trigger mock threat scenarios, rotate regional jurisdictions, or activate the emergency lockdown to preview Bastion's core architecture.
           </p>
         </div>

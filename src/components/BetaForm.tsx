@@ -25,7 +25,7 @@ export const BetaForm: React.FC = () => {
   };
 
   return (
-    <section id="beta-form" className="py-24 px-6 lg:px-12 bg-[#071524] relative border-t border-slate-900/60 flex flex-col items-center justify-center">
+    <section id="beta-form" className="py-24 px-6 lg:px-12 bg-slate-950 relative border-t border-slate-900/60 flex flex-col items-center justify-center">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full filter blur-[140px] pointer-events-none" />
 
@@ -39,13 +39,13 @@ export const BetaForm: React.FC = () => {
           <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white font-sans">
             Secure Your Private Beta Spot.
           </h3>
-          <p className="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto">
+          <p className="text-slate-200 text-sm leading-relaxed max-w-lg mx-auto">
             We are onboarding exactly four mid-market financial design partners for our upcoming compliance testing cohort. Secure a lifetime core license and directly influence the development roadmap.
           </p>
         </div>
 
         {/* Minimalist Enterprise Form Container */}
-        <div className="bg-[#131E2B] rounded-2xl border border-slate-800 shadow-xl p-6 sm:p-8 relative overflow-hidden">
+        <div className="bg-slate-950/60 rounded-2xl border border-slate-800 shadow-xl p-6 sm:p-8 relative overflow-hidden">
           
           <AnimatePresence mode="wait">
             {!isSubmitted ? (

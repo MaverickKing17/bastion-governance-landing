@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#071524] text-white font-sans antialiased selection:bg-sky-500/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-slate-950 text-white font-sans antialiased selection:bg-sky-500/30 selection:text-white overflow-x-hidden">
       
       {/* SECTION 1 — Navigation Header */}
       <Navbar onScrollToSection={handleScrollToSection} />

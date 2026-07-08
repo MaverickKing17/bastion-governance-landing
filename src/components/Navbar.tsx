@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
           <button
             key={link.id}
             onClick={() => onScrollToSection(link.id)}
-            className="text-xs font-semibold text-slate-400 hover:text-white transition-colors duration-150 uppercase tracking-wider font-mono cursor-pointer"
+            className="text-xs font-semibold text-slate-300 hover:text-white transition-colors duration-150 uppercase tracking-wider font-mono cursor-pointer"
           >
             {link.name}
           </button>
