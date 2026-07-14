@@ -140,7 +140,7 @@ export const BetaForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-450 hover:to-cyan-450 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 hover:shadow-sky-400/35 transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-450 hover:to-cyan-450 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_rgba(0,191,255,0.5)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {isSubmitting ? (
                     <>

@@ -176,7 +176,7 @@ export const DemoShowcase: React.FC = () => {
             AI Control Plane Sandbox
           </h3>
           <p className="text-slate-100 text-sm leading-relaxed font-medium">
-            Take command of our high-fidelity secure gateway operations console. Trigger mock threat scenarios, rotate regional jurisdictions, or activate the emergency lockdown to preview Bastion's core architecture.
+            Take command of our high-fidelity secure gateway operations console. Trigger mock threat scenarios, rotate regional jurisdictions, or activate the emergency lockdown to preview Bastion Audit's core architecture.
           </p>
         </div>
 

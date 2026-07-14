@@ -100,7 +100,7 @@ export const IncidentTimeline: React.FC<IncidentTimelineProps> = ({
             </button>
           </div>
           <p className="text-[10px] text-slate-400 font-sans leading-normal">
-            Launch interactive breach scenarios to demo how Bastion's automated circuit breakers isolate compromised LLMs in real-time.
+            Launch interactive breach scenarios to demo how Bastion Audit's automated circuit breakers isolate compromised LLMs in real-time.
           </p>
 
           <div className="grid grid-cols-1 gap-2">

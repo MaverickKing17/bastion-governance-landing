@@ -114,17 +114,17 @@ export const OpenSource: React.FC = () => {
             </div>
 
             {/* Code Output Window */}
-            <div className="flex-1 p-5 font-mono text-xs text-slate-300 overflow-y-auto leading-relaxed select-text bg-[#0B131E]">
-              <pre className="whitespace-pre-wrap">{getCodeContent()}</pre>
+            <div className="flex-1 p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 overflow-y-auto leading-relaxed select-text bg-[#0B131E] scrollbar-thin">
+              <pre className="whitespace-pre-wrap break-all sm:break-normal font-mono">{getCodeContent()}</pre>
             </div>
 
             {/* Terminal Meta footer */}
-            <div className="p-3 bg-slate-950/50 border-t border-slate-850 flex items-center justify-between font-mono text-[9px] text-slate-500">
-              <div className="flex items-center gap-3">
-                <span className="text-emerald-400">● BASTION OPEN SOURCE</span>
+            <div className="p-3 bg-slate-950/50 border-t border-slate-850 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 font-mono text-[9px] text-slate-500">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-emerald-400 font-bold">● BASTION AUDIT OPEN SOURCE</span>
                 <span>TELEMETRY ENGINE</span>
               </div>
-              <span className="font-bold">VERIFIED PACKAGE</span>
+              <span className="font-bold text-[8px] sm:text-[9px]">VERIFIED PACKAGE</span>
             </div>
           </div>
 

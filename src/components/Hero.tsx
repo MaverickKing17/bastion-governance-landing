@@ -80,20 +80,20 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           className="pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto border-t border-slate-900/60"
         >
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">100%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Data Sovereignty & PIPEDA Compliance Verified</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">Zero-Trust</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Agent Guardrails</div>
           </div>
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">0%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Production Environment Penetration Required</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">0ms</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Runtime Latency Overhead</div>
           </div>
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">40+</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Pre-Configured Autonomous Agent Guardrails</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">100%</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Outbound Tool-Invocation Visibility</div>
           </div>
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-2xl md:text-3xl font-bold font-mono text-cyan-400">$0</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Upfront Implementation Overhead</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">Audit-Ready</div>
+            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Compliance Logging</div>
           </div>
         </motion.div>
       </div>
