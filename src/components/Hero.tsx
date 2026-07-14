@@ -43,9 +43,9 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="max-w-2xl mx-auto text-slate-100 text-base md:text-xl leading-relaxed font-sans font-medium"
+          className="max-w-3xl mx-auto text-slate-300 text-base md:text-[20px] leading-relaxed font-sans font-medium"
         >
-          Continuous compliance, real-time policy interception, and identity-aware security for enterprise LLM workflows and autonomous agents. Built for highly regulated industries.
+          Protect enterprise AI agents before they reach production through identity-aware policy enforcement, prompt security, governance automation, and continuous compliance.
         </motion.p>
 
         {/* CTA Group */}
@@ -56,18 +56,18 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
         >
           <button
-            onClick={() => onScrollToSection('demo')}
-            className="w-full sm:w-auto px-7 py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/15"
+            onClick={() => onScrollToSection('beta-form')}
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-sky-500 via-sky-400 to-cyan-400 hover:from-sky-450 hover:via-sky-350 hover:to-cyan-350 text-slate-950 font-extrabold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] transform hover:-translate-y-0.5 active:translate-y-0"
           >
-            Launch Beta Sandbox
-            <ArrowRight className="w-4 h-4" />
+            Request Invite Access
+            <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
           
           <button
             onClick={() => onScrollToSection('open-source')}
-            className="w-full sm:w-auto px-7 py-3.5 bg-transparent border border-slate-600 hover:border-slate-400 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-250 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-4 bg-[#0A1220]/80 border border-slate-800 hover:border-slate-600 hover:bg-[#0E1B30] text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
           >
-            <Terminal className="w-4 h-4 text-slate-300" />
+            <Terminal className="w-4 h-4 text-slate-400" />
             View Open-Source Engine
           </button>
         </motion.div>
@@ -79,21 +79,21 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto border-t border-slate-900/60"
         >
-          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">Zero-Trust</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Agent Guardrails</div>
+          <div className="bg-slate-950/40 border border-slate-900 rounded-xl p-5 text-left transition-all duration-300 hover:bg-[#07111F]/60 hover:border-sky-500/30 hover:shadow-[0_0_30px_rgba(14,165,233,0.06)] flex flex-col justify-between group">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300 transition-colors">Zero-Trust</div>
+            <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider mt-2.5 leading-relaxed group-hover:text-slate-200 transition-colors">Agent Guardrails</div>
           </div>
-          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">0ms</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Runtime Latency Overhead</div>
+          <div className="bg-slate-950/40 border border-slate-900 rounded-xl p-5 text-left transition-all duration-300 hover:bg-[#07111F]/60 hover:border-sky-500/30 hover:shadow-[0_0_30px_rgba(14,165,233,0.06)] flex flex-col justify-between group">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300 transition-colors">0ms</div>
+            <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider mt-2.5 leading-relaxed group-hover:text-slate-200 transition-colors">Runtime Latency Overhead</div>
           </div>
-          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">100%</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Outbound Tool-Invocation Visibility</div>
+          <div className="bg-slate-950/40 border border-slate-900 rounded-xl p-5 text-left transition-all duration-300 hover:bg-[#07111F]/60 hover:border-sky-500/30 hover:shadow-[0_0_30px_rgba(14,165,233,0.06)] flex flex-col justify-between group">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300 transition-colors">100%</div>
+            <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider mt-2.5 leading-relaxed group-hover:text-slate-200 transition-colors">Outbound Tool-Invocation Visibility</div>
           </div>
-          <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-5 text-left transition-all duration-300 hover:bg-slate-900/60 hover:border-slate-700/80 shadow-sm flex flex-col justify-between">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400">Audit-Ready</div>
-            <div className="text-[10px] font-mono uppercase text-slate-100 font-semibold tracking-wider mt-2.5 leading-relaxed">Compliance Logging</div>
+          <div className="bg-slate-950/40 border border-slate-900 rounded-xl p-5 text-left transition-all duration-300 hover:bg-[#07111F]/60 hover:border-sky-500/30 hover:shadow-[0_0_30px_rgba(14,165,233,0.06)] flex flex-col justify-between group">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold font-mono text-cyan-400 group-hover:text-cyan-300 transition-colors">Audit-Ready</div>
+            <div className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider mt-2.5 leading-relaxed group-hover:text-slate-200 transition-colors">Compliance Logging</div>
           </div>
         </motion.div>
       </div>

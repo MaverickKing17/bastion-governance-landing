@@ -1,9 +1,12 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { WhyBastion } from './components/WhyBastion';
 import { DemoShowcase } from './components/DemoShowcase';
 import { Architecture } from './components/Architecture';
+import { TrustFrameworks } from './components/TrustFrameworks';
 import { OpenSource } from './components/OpenSource';
+import { DesignPartnerProgram } from './components/DesignPartnerProgram';
 import { BetaForm } from './components/BetaForm';
 import { Shield, ShieldCheck, Mail, Heart } from 'lucide-react';
 
@@ -28,14 +31,23 @@ export default function App() {
         {/* SECTION 2 — Hero Component */}
         <Hero onScrollToSection={handleScrollToSection} />
 
+        {/* SECTION 2.5 — Why Bastion Audit Section */}
+        <WhyBastion />
+
         {/* SECTION 3 — Interactive Product Demonstration (The sandbox dashboard) */}
         <DemoShowcase />
 
         {/* SECTION 4 — Enterprise Architecture & Governance (Dual Engine schematic) */}
         <Architecture />
 
+        {/* SECTION 4.5 — Enterprise Trust Frameworks */}
+        <TrustFrameworks />
+
         {/* SECTION 5 — Open Source Trust Layer (Terminal installation logs) */}
         <OpenSource />
+
+        {/* SECTION 5.5 — Design Partner Program */}
+        <DesignPartnerProgram />
 
         {/* SECTION 6 — Private Beta Advisory Council (Conversion signup) */}
         <BetaForm />

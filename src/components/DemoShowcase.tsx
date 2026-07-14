@@ -180,8 +180,18 @@ export const DemoShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* Browser Frame Structure */}
-        <div className="max-w-6xl mx-auto w-full bg-slate-900 rounded-2xl border border-slate-800 shadow-[0_0_50px_rgba(0,120,212,0.15)] overflow-hidden flex flex-col h-[850px] relative">
+        {/* Small Label above the browser container */}
+        <div className="flex justify-center select-none">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-cyan-300 uppercase">
+              Interactive Enterprise Command Center
+            </span>
+          </div>
+        </div>
+
+        {/* Browser Frame Structure - Enhanced for enterprise centerpiece look */}
+        <div className="max-w-7xl mx-auto w-full bg-[#050C16] rounded-2xl border-2 border-sky-500/35 shadow-[0_0_80px_rgba(14,165,233,0.25)] hover:border-sky-400/60 hover:shadow-[0_0_100px_rgba(14,165,233,0.35)] transition-all duration-500 overflow-hidden flex flex-col h-[900px] relative">
           
           {/* Header Bar */}
           <div className="h-11 bg-slate-950 px-4 flex items-center justify-between border-b border-slate-800/80 shrink-0 select-none">
@@ -339,9 +349,40 @@ export const DemoShowcase: React.FC = () => {
           />
         </div>
 
+        {/* Three concise capability callouts */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div className="bg-slate-950/40 border border-slate-900/80 rounded-xl p-5 hover:bg-[#081220]/60 hover:border-sky-500/20 transition-all duration-300">
+            <h5 className="text-white font-bold text-sm tracking-wide flex items-center gap-2 font-sans">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              Real-Time Risk Heat Mapping
+            </h5>
+            <p className="text-slate-400 text-xs mt-2 leading-relaxed font-sans">
+              Continuous diagnostic auditing of model semantics, prompt parameters, and behavioral safety scores across global clusters.
+            </p>
+          </div>
+          <div className="bg-slate-950/40 border border-slate-900/80 rounded-xl p-5 hover:bg-[#081220]/60 hover:border-sky-500/20 transition-all duration-300">
+            <h5 className="text-white font-bold text-sm tracking-wide flex items-center gap-2 font-sans">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              Agent Identity Verification
+            </h5>
+            <p className="text-slate-400 text-xs mt-2 leading-relaxed font-sans">
+              Cryptographic authorization of autonomous agent pipelines and workflows, protecting backend database endpoints from illegal exfiltration.
+            </p>
+          </div>
+          <div className="bg-slate-950/40 border border-slate-900/80 rounded-xl p-5 hover:bg-[#081220]/60 hover:border-sky-500/20 transition-all duration-300">
+            <h5 className="text-white font-bold text-sm tracking-wide flex items-center gap-2 font-sans">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              Automated Policy Enforcement
+            </h5>
+            <p className="text-slate-400 text-xs mt-2 leading-relaxed font-sans">
+              Sub-millisecond containment, circuit-breaking rules, and deep payload isolation before requests reach live production instances.
+            </p>
+          </div>
+        </div>
+
         {/* Captions below the browser container as required */}
-        <p className="text-center text-xs text-slate-400 max-w-3xl mx-auto leading-relaxed font-sans mt-4">
-          <strong className="text-slate-200">Bastion Audit Command Center:</strong> Real-time telemetry, automated risk heat-mapping, and instant agent containment capabilities built for highly regulated financial sectors.
+        <p className="text-center text-xs text-slate-500 max-w-3xl mx-auto leading-relaxed font-sans pt-2">
+          <strong className="text-slate-300">Bastion Audit Command Center:</strong> Real-time telemetry, automated risk heat-mapping, and instant agent containment capabilities built for highly regulated financial sectors.
         </p>
       </div>
     </section>
