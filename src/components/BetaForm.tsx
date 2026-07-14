@@ -21,17 +21,21 @@ export const BetaForm: React.FC = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/request-sandbox', {
+      const response = await fetch('https://formspree.io/f/mnjengap', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          securityObjective: formData.painPoint,
+        }),
       });
 
       if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(errData.error || 'Failed to request sandbox access.');
+        throw new Error('Failed to submit sandbox request. Please try again.');
       }
 
       setIsSubmitted(true);

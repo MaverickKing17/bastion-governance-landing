@@ -4,9 +4,10 @@ import { motion } from 'motion/react';
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
+  onOpenSpec?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
+export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenSpec }) => {
   return (
     <section id="hero" className="relative min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 px-6 lg:px-12 text-center overflow-hidden">
       {/* Background radial highlight */}
@@ -62,6 +63,16 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection }) => {
             Request Invite Access
             <ArrowRight className="w-4 h-4 stroke-[3]" />
           </button>
+
+          {onOpenSpec && (
+            <button
+              onClick={onOpenSpec}
+              className="w-full sm:w-auto px-8 py-4 bg-cyan-500/10 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-500/20 text-cyan-300 font-extrabold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+            >
+              <ShieldCheck className="w-4.5 h-4.5 text-cyan-400" />
+              Read Technical Spec
+            </button>
+          )}
           
           <button
             onClick={() => onScrollToSection('open-source')}

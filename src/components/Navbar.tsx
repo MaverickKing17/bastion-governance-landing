@@ -3,9 +3,10 @@ import { Shield, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onScrollToSection: (sectionId: string) => void;
+  onOpenSpec?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onScrollToSection, onOpenSpec }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
@@ -45,10 +46,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
             {link.name}
           </button>
         ))}
+        {onOpenSpec && (
+          <button
+            onClick={onOpenSpec}
+            className="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-150 uppercase tracking-wider font-mono cursor-pointer flex items-center gap-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            Technical Spec
+          </button>
+        )}
       </div>
 
       {/* Primary CTA button */}
       <div className="hidden md:flex items-center gap-4">
+        {onOpenSpec && (
+          <button
+            onClick={onOpenSpec}
+            className="px-4 py-2 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-[11px] font-bold rounded uppercase tracking-wider font-mono transition-all duration-200 cursor-pointer shadow-sm"
+          >
+            Read Technical Spec
+          </button>
+        )}
         <button
           onClick={() => onScrollToSection('beta-form')}
           className="px-4 py-2 bg-transparent hover:bg-sky-500/10 border border-sky-500/40 hover:border-sky-400 text-sky-400 text-[11px] font-bold rounded uppercase tracking-wider font-mono transition-all duration-200 cursor-pointer shadow-sm hover:shadow-sky-500/10"
@@ -82,6 +100,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
               {link.name}
             </button>
           ))}
+          {onOpenSpec && (
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                onOpenSpec();
+              }}
+              className="text-left text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-150 uppercase tracking-wider font-mono py-1 flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              Technical Spec Sheet
+            </button>
+          )}
           <button
             onClick={() => {
               setIsOpen(false);

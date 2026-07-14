@@ -8,9 +8,12 @@ import { TrustFrameworks } from './components/TrustFrameworks';
 import { OpenSource } from './components/OpenSource';
 import { DesignPartnerProgram } from './components/DesignPartnerProgram';
 import { BetaForm } from './components/BetaForm';
+import { TechnicalSpecModal } from './components/TechnicalSpecModal';
 import { Shield, ShieldCheck, Mail, Heart } from 'lucide-react';
 
 export default function App() {
+  const [isSpecOpen, setIsSpecOpen] = React.useState(false);
+
   // Smooth scroll controller for navigating the Single-Page landing layout
   const handleScrollToSection = (sectionId: string) => {
     const targetElement = document.getElementById(sectionId);
@@ -23,13 +26,13 @@ export default function App() {
     <div className="min-h-screen bg-slate-950 text-white font-sans antialiased selection:bg-sky-500/30 selection:text-white overflow-x-hidden">
       
       {/* SECTION 1 — Navigation Header */}
-      <Navbar onScrollToSection={handleScrollToSection} />
+      <Navbar onScrollToSection={handleScrollToSection} onOpenSpec={() => setIsSpecOpen(true)} />
 
       {/* Main Single-Page Content Frame */}
       <div className="flex flex-col">
         
         {/* SECTION 2 — Hero Component */}
-        <Hero onScrollToSection={handleScrollToSection} />
+        <Hero onScrollToSection={handleScrollToSection} onOpenSpec={() => setIsSpecOpen(true)} />
 
         {/* SECTION 2.5 — Why Bastion Audit Section */}
         <WhyBastion />
@@ -82,6 +85,7 @@ export default function App() {
           <div className="space-y-3 font-mono text-xs">
             <h5 className="font-bold text-white uppercase tracking-wider text-[11px]">Product</h5>
             <ul className="space-y-2">
+              <li><button onClick={() => setIsSpecOpen(true)} className="text-cyan-400 hover:text-cyan-300 font-bold transition-colors cursor-pointer flex items-center gap-1.5">★ Technical Spec Sheet</button></li>
               <li><button onClick={() => handleScrollToSection('demo')} className="hover:text-white transition-colors cursor-pointer">Live Sandbox</button></li>
               <li><button onClick={() => handleScrollToSection('architecture')} className="hover:text-white transition-colors cursor-pointer">Dual-Engine Gateway</button></li>
               <li><button onClick={() => handleScrollToSection('open-source')} className="hover:text-white transition-colors cursor-pointer">Bastion Guard Agent</button></li>
@@ -140,6 +144,9 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Embedded High-Quality Technical Specification Overlay Modal */}
+      <TechnicalSpecModal isOpen={isSpecOpen} onClose={() => setIsSpecOpen(false)} />
 
     </div>
   );
