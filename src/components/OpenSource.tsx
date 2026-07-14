@@ -110,8 +110,8 @@ export const OpenSource: React.FC = () => {
               </button>
               
               <div className="flex items-center gap-2 text-zinc-400 font-mono text-[10px] bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-                <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 animate-pulse" />
-                <span>Loved by <strong className="text-white font-bold">12,000+</strong> security engineers</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span>Licensed under <strong className="text-white font-semibold">Apache-2.0</strong></span>
               </div>
             </div>
           </div>
