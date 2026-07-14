@@ -164,8 +164,11 @@ export const DemoShowcase: React.FC = () => {
   const activeInterventionsCount = incidents.filter(i => i.severity === 'critical' || i.severity === 'high').length * 12 + 14;
 
   return (
-    <section id="demo" className="py-20 px-6 lg:px-12 bg-[#212F45] relative border-t border-slate-900/60">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="demo" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-slate-950 via-[#090F1B] to-slate-950 relative border-t border-slate-900/60 overflow-hidden">
+      {/* Premium ambient backdrop glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.06)_0%,transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -175,7 +178,7 @@ export const DemoShowcase: React.FC = () => {
           <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white font-sans">
             AI Control Plane Sandbox
           </h3>
-          <p className="text-slate-100 text-sm leading-relaxed font-medium">
+          <p className="text-slate-300 text-sm leading-relaxed font-medium">
             Take command of our high-fidelity secure gateway operations console. Trigger mock threat scenarios, rotate regional jurisdictions, or activate the emergency lockdown to preview Bastion Audit's core architecture.
           </p>
         </div>
