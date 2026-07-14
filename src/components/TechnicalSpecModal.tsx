@@ -225,7 +225,7 @@ To schedule a dedicated architectural review, connect with the founder directly 
             </div>
 
             {/* Immersive Scrollable Document Area */}
-            <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 select-text scrollbar-thin scrollbar-thumb-slate-800">
+            <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 select-text white-scrollbar">
               
               {/* Document Header Panel */}
               <div className="bg-[#050A14] border border-[#121E31] rounded-xl p-5 sm:p-6 space-y-4">
@@ -313,7 +313,7 @@ To schedule a dedicated architectural review, connect with the founder directly 
                         <span>main.ts</span>
                         <span className="text-emerald-400">GPG SIGNED</span>
                       </div>
-                      <pre className="p-4 overflow-x-auto text-xs font-mono text-zinc-300 leading-relaxed scrollbar-thin">
+                      <pre className="p-4 overflow-x-auto text-xs font-mono text-zinc-300 leading-relaxed white-scrollbar">
 {`// npm install @bastion/guard-telemetry
 import { BastionGuard } from '@bastion/guard-telemetry';
 

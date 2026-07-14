@@ -151,7 +151,7 @@ export const OpenSource: React.FC = () => {
             </div>
 
             {/* Code Output Window */}
-            <div className="flex-1 p-5 font-mono text-[11px] sm:text-xs text-zinc-100 overflow-y-auto leading-relaxed select-text bg-[#030712] scrollbar-thin">
+            <div className="flex-1 p-5 font-mono text-[11px] sm:text-xs text-zinc-100 overflow-y-auto leading-relaxed select-text bg-[#030712] white-scrollbar">
               <pre className="font-mono">{renderCode()}</pre>
             </div>
 

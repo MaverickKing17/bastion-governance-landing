@@ -33,3 +33,28 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #f1f5f9;
 }
+
+/* Bright White Scrollbar Class */
+.white-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.white-scrollbar::-webkit-scrollbar-track {
+  background: #050B15;
+  border-radius: 6px;
+}
+.white-scrollbar::-webkit-scrollbar-thumb {
+  background: #ffffff !important;
+  border-radius: 6px;
+  border: 2px solid #050B15;
+}
+.white-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f8fafc !important;
+}
+
+/* Firefox support for scrollbars */
+.white-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff #050B15;
+}
+
