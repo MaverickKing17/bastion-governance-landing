@@ -76,14 +76,14 @@ export const TrustFrameworks: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-gradient-to-br from-[#121E31] to-[#0A1322] border border-[#1E3250] hover:bg-gradient-to-br hover:from-[#17273E] hover:to-[#0F1D30] hover:border-cyan-500/80 hover:shadow-[0_0_40px_rgba(6,182,212,0.15)] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between group rounded-xl p-5"
+              className="bg-gradient-to-br from-[#0F1C30] to-[#060D1A] border border-[#1E3250]/90 hover:bg-gradient-to-br hover:from-[#142A4A] hover:to-[#091526] hover:border-cyan-400/80 hover:shadow-[0_0_40px_rgba(6,182,212,0.22)] hover:scale-[1.015] transition-all duration-300 flex flex-col justify-between group rounded-xl p-5"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-9 h-9 rounded-lg bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-400 shadow-sm">
                     {fw.icon}
                   </div>
-                  <span className="text-[9px] font-mono uppercase bg-cyan-500/15 border border-cyan-400/25 px-2 py-0.5 rounded text-cyan-400 tracking-wider">
+                  <span className="text-[9px] font-mono uppercase bg-cyan-500/15 border border-cyan-400/25 px-2 py-0.5 rounded text-cyan-300 tracking-wider font-bold">
                     {fw.category}
                   </span>
                 </div>
@@ -92,14 +92,14 @@ export const TrustFrameworks: React.FC = () => {
                   <h4 className="text-sm font-bold text-white tracking-wide font-sans group-hover:text-cyan-300 transition-colors">
                     {fw.name}
                   </h4>
-                  <p className="text-white text-[11px] leading-relaxed mt-2 font-sans font-medium">
+                  <p className="text-zinc-300 text-[11px] leading-relaxed mt-2.5 font-sans font-medium">
                     {fw.desc}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center gap-1.5 text-[9px] font-mono uppercase text-cyan-400/90 font-semibold">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+              <div className="pt-4 border-t border-slate-800/60 mt-4 flex items-center gap-1.5 text-[9px] font-mono uppercase text-cyan-400 font-bold tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 <span>COMPATIBILITY READY</span>
               </div>
             </motion.div>
@@ -110,23 +110,25 @@ export const TrustFrameworks: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="bg-gradient-to-br from-[#0B2130] to-[#0D1322] border border-cyan-500/50 shadow-[0_0_35px_rgba(6,182,212,0.12)] hover:border-cyan-400 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(6,182,212,0.18)] transition-all duration-300 flex flex-col justify-between rounded-xl p-5"
+            className="bg-gradient-to-br from-[#0B253D] via-[#081B2E] to-[#040D17] border border-cyan-500/60 shadow-[0_0_35px_rgba(6,182,212,0.15)] hover:border-cyan-400 hover:scale-[1.015] hover:shadow-[0_0_50px_rgba(6,182,212,0.28)] transition-all duration-300 flex flex-col justify-between rounded-xl p-5"
           >
-            <div className="space-y-3">
-              <span className="text-[9px] font-mono bg-cyan-500/25 text-cyan-300 px-2.5 py-1 rounded-full border border-cyan-400/30 font-bold">
-                ENTERPRISE CUSTOMIZABLE
-              </span>
-              <h4 className="text-sm font-bold text-white tracking-wide font-sans">
+            <div className="space-y-3.5">
+              <div className="flex">
+                <span className="text-[9px] font-mono bg-cyan-500/25 text-cyan-200 px-2.5 py-1 rounded-full border border-cyan-400/30 font-extrabold uppercase tracking-wider">
+                  ENTERPRISE CUSTOMIZABLE
+                </span>
+              </div>
+              <h4 className="text-base font-bold text-white tracking-wide font-sans">
                 Need Custom Policies?
               </h4>
-              <p className="text-white text-[11px] leading-relaxed font-sans font-medium">
+              <p className="text-zinc-200 text-xs leading-relaxed font-sans font-medium">
                 Our policy engine supports tailored compliance templates for private banking guidelines, provincial health registries, or unique corporate data classification protocols.
               </p>
             </div>
 
-            <span className="pt-4 text-[9px] font-mono text-cyan-400/80 uppercase font-semibold">
+            <div className="pt-4 border-t border-cyan-500/15 mt-4 text-[9px] font-mono text-cyan-300/80 uppercase font-bold tracking-wider">
               RESOURCES PROVIDED BY BASTION SEC
-            </span>
+            </div>
           </motion.div>
         </div>
       </div>

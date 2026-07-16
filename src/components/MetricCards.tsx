@@ -97,28 +97,28 @@ export const MetricCards: React.FC<MetricCardsProps> = ({
           <div
             key={m.id}
             onClick={() => onCardClick?.(m.title)}
-            className="group cursor-pointer bg-slate-800/80 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-slate-950/30 hover:-translate-y-0.5"
+            className="group cursor-pointer bg-slate-900/60 backdrop-blur-md border border-[#1E3250]/70 rounded-xl p-4 flex flex-col justify-between hover:bg-slate-900 hover:border-cyan-500/50 transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(6,182,212,0.12)] hover:-translate-y-0.5 select-none"
           >
             {/* Top row */}
             <div className="flex justify-between items-start gap-2">
-              <span className="text-[11px] font-semibold text-slate-400 tracking-wide line-clamp-1 uppercase group-hover:text-slate-300">
+              <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider line-clamp-1 group-hover:text-cyan-300 transition-colors">
                 {m.title}
               </span>
-              <div className={`p-1.5 rounded-lg border flex items-center justify-center shrink-0 ${m.statusColor}`}>
+              <div className={`p-1.5 rounded-lg border flex items-center justify-center shrink-0 shadow-sm ${m.statusColor}`}>
                 <Icon className="w-4 h-4" />
               </div>
             </div>
 
             {/* Main Value */}
-            <div className="mt-2.5 mb-1">
-              <span className="text-2xl font-bold font-mono tracking-tight text-white group-hover:text-emerald-300 transition-colors duration-200">
+            <div className="mt-3 mb-1.5">
+              <span className="text-2xl font-black font-mono tracking-tight text-white group-hover:text-cyan-200 transition-colors duration-200">
                 {m.value}
               </span>
             </div>
 
             {/* Bottom trend row */}
-            <div className="pt-2 border-t border-slate-700/40 flex flex-col gap-0.5">
-              <span className="text-[9px] font-mono text-slate-500 truncate block">
+            <div className="pt-2.5 border-t border-slate-800/80 flex flex-col gap-0.5">
+              <span className="text-[9px] font-mono text-slate-400 truncate block">
                 {m.subtext}
               </span>
               <span className={`text-[9px] font-mono font-bold truncate block ${
