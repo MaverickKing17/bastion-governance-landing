@@ -133,22 +133,22 @@ export const Architecture: React.FC = () => {
             <div className="space-y-3 relative z-10">
               {pipelineNodes.map((node, idx) => (
                 <div key={idx} className="flex flex-col items-center">
-                  {/* Schematic card - Transparent card with cyan accent left border */}
-                  <div className={`w-full rounded-xl border border-sky-500/10 border-l-4 ${node.color} bg-slate-950/40 p-4 flex flex-col sm:flex-row sm:items-center justify-between text-left shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-sky-400/40 hover:bg-[#07111F]/50 hover:shadow-[0_0_25px_rgba(14,165,233,0.08)] transform hover:-translate-y-0.5 group`}>
+                  {/* Schematic card - Glassmorphism, slate-900/60 backdrop-blur-md with cyan glowing accent */}
+                  <div className={`w-full rounded-xl border border-cyan-500/30 border-l-4 ${node.color} bg-slate-900/60 p-4 flex flex-col sm:flex-row sm:items-center justify-between text-left shadow-lg backdrop-blur-md transition-all duration-300 hover:border-cyan-400 hover:bg-slate-900/80 hover:shadow-[0_0_30px_rgba(6,182,212,0.22)] transform hover:-translate-y-0.5 group`}>
                     <div className="space-y-1 max-w-[80%]">
                       <div className="flex items-center gap-2">
-                        <span className="text-[8px] font-mono uppercase bg-slate-900 border border-slate-800 px-1.5 py-0.5 rounded text-slate-500 font-bold group-hover:text-cyan-400 group-hover:border-sky-500/20 transition-colors">
+                        <span className="text-[8px] font-mono uppercase bg-slate-950 border border-slate-800 px-1.5 py-0.5 rounded text-slate-400 font-bold group-hover:text-cyan-300 group-hover:border-cyan-500/40 transition-colors">
                           0{idx + 1}
                         </span>
-                        <h5 className="text-xs font-bold uppercase tracking-wide text-white">
+                        <h5 className="text-xs font-bold uppercase tracking-wide text-white group-hover:text-cyan-200 transition-colors">
                           {node.title}
                         </h5>
                       </div>
-                      <p className="text-[10px] text-slate-400 leading-relaxed font-sans">
+                      <p className="text-[10px] text-slate-300 leading-relaxed font-sans font-medium">
                         {node.desc}
                       </p>
                     </div>
-                    <div className="mt-2 sm:mt-0 font-mono text-[9px] text-sky-500/60 group-hover:text-sky-400 transition-colors">
+                    <div className="mt-2 sm:mt-0 font-mono text-[9px] text-cyan-400/80 font-bold tracking-wider group-hover:text-cyan-300 transition-colors">
                       {node.code}
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export const Architecture: React.FC = () => {
                   {/* Flow Chevron down */}
                   {idx < pipelineNodes.length - 1 && (
                     <div className="my-1.5 text-slate-700 flex flex-col items-center justify-center">
-                      <ChevronDown className="w-4.5 h-4.5 text-sky-500/40" />
+                      <ChevronDown className="w-4.5 h-4.5 text-cyan-500/40" />
                     </div>
                   )}
                 </div>

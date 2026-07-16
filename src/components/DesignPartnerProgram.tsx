@@ -60,7 +60,7 @@ export const DesignPartnerProgram: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="col-span-1 md:col-span-2 lg:col-span-1 bg-gradient-to-br from-[#0B253D] via-[#081B2E] to-[#040D17] border border-cyan-500/60 hover:border-cyan-400 hover:scale-[1.015] hover:shadow-[0_0_50px_rgba(6,182,212,0.25)] transition-all duration-300 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_0_40px_rgba(6,182,212,0.15)] relative overflow-hidden group"
+            className="col-span-1 md:col-span-2 lg:col-span-1 bg-slate-900/60 backdrop-blur-md border border-cyan-500/50 hover:border-cyan-400 hover:scale-[1.015] hover:shadow-[0_0_50px_rgba(6,182,212,0.28)] transition-all duration-300 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_0_40px_rgba(6,182,212,0.18)] relative overflow-hidden group"
           >
             {/* Ambient indicator */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full filter blur-[40px] pointer-events-none" />
@@ -109,10 +109,10 @@ export const DesignPartnerProgram: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className={`border transition-all duration-300 flex flex-col justify-between group rounded-2xl p-6 hover:scale-[1.015] ${
+                className={`backdrop-blur-md transition-all duration-300 flex flex-col justify-between group rounded-2xl p-6 hover:scale-[1.015] ${
                   isRemainingThree
-                    ? 'bg-gradient-to-br from-[#0E2543] via-[#08172D] to-[#030A14] border-cyan-500/70 border-l-4 border-l-cyan-400 shadow-[0_0_35px_rgba(6,182,212,0.18)] hover:shadow-[0_0_50px_rgba(6,182,212,0.3)] hover:border-cyan-400'
-                    : 'bg-gradient-to-br from-[#0F1C30] to-[#060D1A] border-[#1E3250] hover:bg-gradient-to-br hover:from-[#142A4A] hover:to-[#091526] hover:border-cyan-500/80 hover:shadow-[0_0_40px_rgba(6,182,212,0.18)]'
+                    ? 'bg-slate-900/60 border border-cyan-500/70 border-l-4 border-l-cyan-400 shadow-[0_0_35px_rgba(6,182,212,0.22)] hover:shadow-[0_0_50px_rgba(6,182,212,0.35)] hover:border-cyan-400'
+                    : 'bg-slate-900/60 border border-[#1E3250] hover:border-cyan-500/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.18)]'
                 }`}
               >
                 <div className="space-y-5">
