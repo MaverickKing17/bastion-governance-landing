@@ -147,7 +147,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Sidebar Footer */}
       <div className="p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between text-slate-500 text-[10px] font-mono">
-        <span>Bastion Core v2.8</span>
+        <span>Pellorn Core v1.0</span>
         <span className="text-[9px] bg-slate-900 border border-slate-800 px-1.5 py-0.5 rounded">
           UTC TIME
         </span>

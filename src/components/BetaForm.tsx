@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, ShieldCheck, Mail, User, ShieldAlert, FileText, Database, Shield, Zap, Users, Compass } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, Mail, User, Building, Briefcase, HelpCircle, Shield, Database, Lock, Users, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const BetaForm: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    painPoint: '',
+    organization: '',
+    sector: 'Banking',
+    role: 'Risk / Compliance',
+    governancePriority: '',
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +18,10 @@ export const BetaForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.painPoint) return;
+    if (!formData.fullName || !formData.email || !formData.organization) {
+      setErrorMessage('Please fill in your name, work email, and organization.');
+      return;
+    }
 
     setIsSubmitting(true);
     setErrorMessage('');
@@ -28,14 +34,18 @@ export const BetaForm: React.FC = () => {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
+          brand: 'Pellorn',
           name: formData.fullName,
           email: formData.email,
-          securityObjective: formData.painPoint,
+          organization: formData.organization,
+          sector: formData.sector,
+          role: formData.role,
+          governancePriority: formData.governancePriority,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit sandbox request. Please try again.');
+        throw new Error('Failed to submit early access request. Please try again or email us directly.');
       }
 
       setIsSubmitted(true);
@@ -49,206 +59,254 @@ export const BetaForm: React.FC = () => {
 
   const outcomes = [
     {
-      icon: <Shield className="w-4.5 h-4.5 text-sky-400" />,
-      title: "No Production Integration Required",
-      desc: "Evaluate the complete control plane and circuit breaker gates in a fully sandboxed staging environment with zero changes to live systems."
+      icon: Shield,
+      title: 'Isolated Staging Evaluation',
+      desc: 'Test Pellorn in a private, sandboxed environment without altering live production configurations.'
     },
     {
-      icon: <Database className="w-4.5 h-4.5 text-sky-400" />,
-      title: "Synthetic Datasets Only",
-      desc: "Test security policies, prompt injections, and masking overrides using 100% simulated, non-sensitive mock payloads."
+      icon: Database,
+      title: 'Synthetic Payloads Only',
+      desc: 'Zero risk of customer data leakage. We use high-fidelity synthetic transactions and model traces.'
     },
     {
-      icon: <Zap className="w-4.5 h-4.5 text-sky-400" />,
-      title: "Accelerated Security Review",
-      desc: "Download pre-compiled architectural diagrams and compliance evidence logs ready to submit to your CISO or Risk Officer."
+      icon: Lock,
+      title: 'Zero Production Credentials',
+      desc: 'No corporate credentials or live database access required to review governance capabilities.'
     },
     {
-      icon: <Users className="w-4.5 h-4.5 text-sky-400" />,
-      title: "Direct Access to the Founding Team",
-      desc: "Work 1-on-1 with Bastion Audit security architects to customize telemetry ingestion configurations and specific safety profiles."
-    },
-    {
-      icon: <Compass className="w-4.5 h-4.5 text-sky-400" />,
-      title: "Influence the Security Roadmap",
-      desc: "Gain priority access to future release branches, custom dashboard integrations, and upcoming regulatory templates."
+      icon: Users,
+      title: 'Direct Dialogue with Architects',
+      desc: 'Engage with our core team in Toronto to explore specific OSFI E-21, PIPEDA, and model risk requirements.'
     }
   ];
 
   return (
-    <section id="beta-form" className="py-24 px-6 lg:px-12 bg-slate-950 relative border-t border-slate-900/60 flex flex-col items-center justify-center">
-      {/* Background ambient lighting - enhanced for high visibility and centering the form */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.06)_0%,transparent_70%)] pointer-events-none" />
+    <section id="early-access" className="py-24 px-6 lg:px-12 bg-slate-950 relative border-t border-slate-900/80">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.06)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl w-full mx-auto space-y-12 relative z-10">
         
-        {/* Layout Grid: 2-Columns on Large Screen */}
+        {/* Layout Grid: 2 Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Business outcomes list */}
+          {/* Left Column: Context & Evaluation Assurance */}
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-400 font-mono text-[10px] uppercase tracking-wider font-bold">
-                Enterprise Evaluation Staging
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-[10px] uppercase tracking-wider font-bold">
+                Early Access & Validation
               </div>
               <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-sans leading-tight">
-                Evaluate Bastion Audit Without Touching Production
+                Evaluate Pellorn for your organization
               </h3>
-              <p className="text-slate-400 text-sm md:text-base leading-relaxed font-sans">
-                Review our sub-millisecond AI policy interceptors, cryptographic identity validation, and tamper-resistant audit logs with absolute data isolation.
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans">
+                Connect with our team to discuss AI governance in your organization, review the platform specification, and participate in our early validation program.
               </p>
             </div>
 
-            {/* List of outcome-based benefits */}
-            <div className="space-y-5">
-              {outcomes.map((out, i) => (
-                <div key={i} className="flex gap-4 items-start group">
-                  <div className="w-8 h-8 rounded-lg bg-[#050C16] border border-slate-800/80 flex items-center justify-center text-sky-400 shrink-0 group-hover:border-sky-500/20 group-hover:bg-[#07111F]/50 transition-colors">
-                    {out.icon}
+            {/* List of evaluation assurances */}
+            <div className="space-y-4 pt-2">
+              {outcomes.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="flex items-start gap-4 p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                    <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shrink-0">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-white font-sans">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-slate-400 font-sans mt-0.5 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-200 group-hover:text-white transition-colors">
-                      {out.title}
-                    </h4>
-                    <p className="text-slate-400 text-[11px] sm:text-xs mt-1 leading-relaxed">
-                      {out.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-400 font-mono">
+              <div className="text-cyan-400 font-bold uppercase text-[10px] tracking-wider mb-1">
+                Privacy Notice
+              </div>
+              Your information is used exclusively for correspondence regarding the Pellorn Early Access Program. We never sell or share contact details.
             </div>
           </div>
 
-          {/* Right Column: Submission Form */}
-          <div className="lg:col-span-6 w-full">
-            {/* High-Contrast Premium Enterprise Form Container with a vibrant Cyber Glow & Accent Line */}
-            <div className="bg-[#050C16] rounded-2xl border-2 border-sky-500/20 shadow-[0_0_80px_rgba(14,165,233,0.15)] p-6 sm:p-8 relative overflow-hidden transition-all duration-300 hover:border-sky-400/55 hover:shadow-[0_0_100px_rgba(14,165,233,0.25)] text-left">
-              
-              {/* Top Edge Neon Accent Line */}
-              <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400" />
+          {/* Right Column: Intake Form Card */}
+          <div className="lg:col-span-6">
+            <div className="bg-gradient-to-b from-slate-900 via-[#07111F] to-slate-950 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 shadow-[0_0_40px_rgba(6,182,212,0.12)] text-left relative">
               
               <AnimatePresence mode="wait">
-                {!isSubmitted ? (
-                  <motion.form
-                    key="beta-form"
-                    onSubmit={handleSubmit}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                {isSubmitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    className="space-y-6"
+                    className="py-12 px-4 text-center space-y-6"
                   >
-                    <div className="border-b border-slate-900/60 pb-3">
-                      <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
-                        Initiate Sandbox Request
+                    <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 mx-auto flex items-center justify-center text-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.25)]">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-2xl font-bold text-white font-sans">
+                        Request Received
                       </h4>
-                      <p className="text-[10px] text-slate-400 mt-1">
-                        Secure, sovereign evaluation of active AI model controls.
+                      <p className="text-sm text-slate-300 font-sans max-w-md mx-auto leading-relaxed">
+                        Thank you for your interest in Pellorn. A member of our team will review your organization profile and reach out within 1 business day.
                       </p>
                     </div>
 
-                    {/* Field 1: Full Name */}
-                    <div className="space-y-2">
-                      <label htmlFor="fullName" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                        <User className="w-3.5 h-3.5 text-sky-400" />
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        required
-                        value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="e.g. Cynthia Vance"
-                        className="w-full px-4 py-3.5 bg-[#081220] border border-slate-800 hover:border-slate-600 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10 placeholder:text-slate-600 transition-all duration-200"
-                      />
+                    <div className="pt-4 border-t border-slate-800 text-xs font-mono text-cyan-400">
+                      Advisory desk: advisory@pellorn.com
                     </div>
-
-                    {/* Field 2: Corporate Email */}
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-sky-400" />
-                        Corporate Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="c.vance@company.com"
-                        className="w-full px-4 py-3.5 bg-[#081220] border border-slate-800 hover:border-slate-600 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10 placeholder:text-slate-600 transition-all duration-200"
-                      />
-                    </div>
-
-                    {/* Field 3: Primary AI Security Pain Point */}
-                    <div className="space-y-2">
-                      <label htmlFor="painPoint" className="text-[10px] font-mono uppercase tracking-wider text-slate-300 font-bold flex items-center gap-1.5">
-                        <ShieldAlert className="w-3.5 h-3.5 text-sky-400" />
-                        Security Objective / Compliance Framework
-                      </label>
-                      <textarea
-                        id="painPoint"
-                        required
-                        rows={3}
-                        value={formData.painPoint}
-                        onChange={(e) => setFormData({ ...formData, painPoint: e.target.value })}
-                        placeholder="Briefly state your core objective (e.g., prompt filtering, SOC2 telemetry, circuit-breaker deployment, or PIPEDA boundaries)"
-                        className="w-full px-4 py-3 bg-[#081220] border border-slate-800 hover:border-slate-600 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10 placeholder:text-slate-600 transition-all duration-200 resize-none"
-                      />
+                  </motion.div>
+                ) : (
+                  <form key="form" onSubmit={handleSubmit} className="space-y-5">
+                    <div className="border-b border-slate-800/80 pb-4">
+                      <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest font-bold">
+                        ADVISORY INTAKE
+                      </span>
+                      <h4 className="text-xl font-bold text-white font-sans mt-0.5">
+                        Join the Early Access Program
+                      </h4>
+                      <p className="text-xs text-slate-400 mt-1 font-sans">
+                        For leaders in Canadian and international financial services.
+                      </p>
                     </div>
 
                     {errorMessage && (
-                      <p className="text-xs font-mono text-red-400 bg-red-950/40 border border-red-900/50 p-3 rounded-lg text-center">
+                      <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono">
                         {errorMessage}
-                      </p>
+                      </div>
                     )}
 
-                    {/* Full Width Submit Button */}
+                    {/* Full Name */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                        Full Name <span className="text-cyan-400">*</span>
+                      </label>
+                      <div className="relative">
+                        <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          required
+                          value={formData.fullName}
+                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                          placeholder="e.g. Sarah Jenkins"
+                          className="w-full pl-10 pr-4 py-2.5 bg-slate-950/90 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors font-sans"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                        Corporate Work Email <span className="text-cyan-400">*</span>
+                      </label>
+                      <div className="relative">
+                        <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="s.jenkins@rbc.com / institution.ca"
+                          className="w-full pl-10 pr-4 py-2.5 bg-slate-950/90 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors font-sans"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Organization */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                        Institution / Organization <span className="text-cyan-400">*</span>
+                      </label>
+                      <div className="relative">
+                        <Building className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          required
+                          value={formData.organization}
+                          onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                          placeholder="e.g. Scotiabank, Sun Life, Wealthsimple"
+                          className="w-full pl-10 pr-4 py-2.5 bg-slate-950/90 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors font-sans"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Sector & Role Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                          Primary Sector
+                        </label>
+                        <select
+                          value={formData.sector}
+                          onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
+                          className="w-full px-3 py-2.5 bg-slate-950/90 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-cyan-400 font-sans"
+                        >
+                          <option value="Banking">Banking</option>
+                          <option value="Insurance">Insurance</option>
+                          <option value="Wealth Management">Wealth Management</option>
+                          <option value="Lending & Fintech">Lending & Fintech</option>
+                          <option value="Asset Management">Asset Management</option>
+                          <option value="Other">Other Regulated Sector</option>
+                        </select>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                          Executive Role / Function
+                        </label>
+                        <select
+                          value={formData.role}
+                          onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                          className="w-full px-3 py-2.5 bg-slate-950/90 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-cyan-400 font-sans"
+                        >
+                          <option value="CIO / CTO">CIO / CTO</option>
+                          <option value="CISO / Tech Risk">CISO / Tech Risk</option>
+                          <option value="CRO / Model Risk">CRO / Model Risk</option>
+                          <option value="Chief Data Officer / AI Lead">Chief Data Officer / AI Lead</option>
+                          <option value="Compliance / Legal">Compliance / Legal</option>
+                          <option value="Governance Committee">Governance Committee</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Key Governance Priorities */}
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">
+                        Current AI Governance Priorities / Focus Areas
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={formData.governancePriority}
+                        onChange={(e) => setFormData({ ...formData, governancePriority: e.target.value })}
+                        placeholder="e.g. Gaining visibility into third-party AI dependencies, preparing for OSFI E-21, or establishing line-of-business model ownership..."
+                        className="w-full px-3 py-2 bg-slate-950/90 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 transition-colors font-sans"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-450 hover:to-cyan-450 text-white font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-300 ease-in-out hover:shadow-[0_0_15px_rgba(0,191,255,0.5)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transform hover:-translate-y-0.5 active:translate-y-0"
+                      className="w-full py-3.5 bg-gradient-to-r from-cyan-500 via-sky-400 to-teal-400 hover:from-cyan-400 hover:via-sky-300 hover:to-teal-300 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.3)] disabled:opacity-50"
                     >
                       {isSubmitting ? (
-                        <>
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Processing Security Key...
-                        </>
+                        <span>Submitting Request...</span>
                       ) : (
                         <>
-                          <Send className="w-4 h-4" />
-                          Request Sandbox Invite
+                          <span>Submit Early Access Request</span>
+                          <Send className="w-3.5 h-3.5" />
                         </>
                       )}
                     </button>
-
-                    {/* CRO Privacy Assurance */}
-                    <p className="text-center text-[10px] text-slate-500 font-sans leading-relaxed pt-2">
-                      <strong className="text-slate-400 font-semibold">Privacy Policy:</strong> We enforce zero telemetry leakage. Your corporate email and objective metrics will strictly operate under regional compliance boundaries (SOC2/PIPEDA). No data is shared.
-                    </p>
-                  </motion.form>
-                ) : (
-                  <motion.div
-                    key="beta-success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-8 space-y-5"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mx-auto animate-pulse">
-                      <ShieldCheck className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <h4 className="text-base font-bold font-mono uppercase text-emerald-400 tracking-wider">
-                        Validation Request Logged
-                      </h4>
-                      <p className="text-[10px] text-slate-500 mt-1.5 font-mono tracking-widest">
-                        SYSTEM ID: #SEC-{Date.now().toString().slice(-6)}-VERIFIED
-                      </p>
-                    </div>
-                    <p className="text-xs text-slate-300 leading-relaxed max-w-sm mx-auto font-sans font-medium">
-                      The telemetry architecture engine has successfully simulated your sandbox intake profile. A security engineer will contact you shortly to provide cryptographic keys.
-                    </p>
-                  </motion.div>
+                  </form>
                 )}
               </AnimatePresence>
 
@@ -257,10 +315,6 @@ export const BetaForm: React.FC = () => {
 
         </div>
 
-        {/* Dynamic slots metadata */}
-        <p className="text-center font-mono text-[10px] text-slate-600">
-          AUTHORIZED CRYPTOGRAPHIC ENVELOPE SEC-904-BETA • DIRECTORY PROTECTED
-        </p>
       </div>
     </section>
   );

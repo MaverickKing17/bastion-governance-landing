@@ -65,7 +65,7 @@ export const KillSwitchModal: React.FC<KillSwitchModalProps> = ({ isOpen, onClos
               <span className="text-amber-400 font-bold">READ_ONLY</span>
             </div>
             <div className="flex justify-between">
-              <span>[11:39:23] LAKERA SHIELD SAFEGUARDS:</span>
+              <span>[11:39:23] PELLORN SHIELD SAFEGUARDS:</span>
               <span className="text-emerald-400 font-bold">MAX_DEFENSIVE</span>
             </div>
           </div>

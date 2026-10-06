@@ -105,47 +105,47 @@ export const INITIAL_INCIDENTS: Incident[] = [
   {
     id: 'inc-1',
     timestamp: '10:43:02',
-    event: 'Prompt Injection Attempt',
+    event: 'Prompt Injection Pattern Flagged',
     type: 'injection',
     severity: 'high',
     agentName: 'ClaimsCopilot',
-    description: 'Adversarial system prompt bypass attempted in Claims submission payload. Lakera Guard intercepted the payload.'
+    description: 'Adversarial system prompt bypass attempted in Claims submission payload. Pellorn Governance Layer intercepted the payload.'
   },
   {
     id: 'inc-2',
     timestamp: '10:43:04',
-    event: 'PII Access Attempt',
+    event: 'Unmasked PII Access Attempt',
     type: 'pii',
     severity: 'critical',
     agentName: 'ClaimsCopilot',
-    description: 'Agent attempted to read and transmit 14 plain-text Canadian Social Insurance Numbers (SIN) without masking.'
+    description: 'Model attempted to read and transmit 14 plain-text Canadian Social Insurance Numbers (SIN) without required redaction.'
   },
   {
     id: 'inc-3',
     timestamp: '10:43:06',
-    event: 'Circuit Breaker Triggered',
+    event: 'Safety Circuit Breaker Tripped',
     type: 'circuit',
     severity: 'critical',
     agentName: 'ClaimsCopilot',
-    description: 'Automated policy #SEC-904 triggered. Real-time prompt response stream terminated to protect downstream data stores.'
+    description: 'Policy #SEC-904 triggered. Model runtime stream halted to prevent sensitive data egress into external API.'
   },
   {
     id: 'inc-4',
     timestamp: '10:43:07',
-    event: 'Agent Quarantined',
+    event: 'System Quarantined for Review',
     type: 'quarantine',
     severity: 'critical',
     agentName: 'ClaimsCopilot',
-    description: 'Agent container isolated. Live execution suspended. Credentials revoked pending compliance audit.'
+    description: 'System isolated pending review by Model Risk and Compliance officers. Evidence snapshot archived.'
   },
   {
     id: 'inc-5',
     timestamp: '09:12:45',
-    event: 'Lakera Rule Update',
+    event: 'Governance Rule Feed Synced',
     type: 'info',
     severity: 'low',
     agentName: 'Global Gateway',
-    description: 'Updated threat definition feed for OWASP Top 10 LLM risks (v2026.4).'
+    description: 'Updated baseline compliance policies aligned with OSFI E-21 and NIST AI RMF standards.'
   }
 ];
 
@@ -332,7 +332,7 @@ export const generateExecutiveSummary = (timeframe: Timeframe, region: Region, h
   const liability = region === 'canada' ? '$2.6M CAD' : region === 'us' ? '$2.1M USD' : '€1.9M EUR';
   const preventedLoss = timeframe === '24h' ? '$1.1M' : timeframe === '7d' ? '$8.4M' : '$28.7M';
   
-  return `In the past ${timeframeLabel}, Bastion Audit governed 284 autonomous agents across the global enterprise tenant. Monitoring is running on ${regionLabel} dedicated environments. ${highRiskCount} agents exhibited elevated behavioral drift or anomaly markers, and ${quarantinedCount} critical PII exposure incidents were successfully intercepted by our Lakera Guard layer before raw transmission occurred. Estimated regulatory liability avoided: ${liability}. Financial loss prevented: ${preventedLoss}.`;
+  return `In the past ${timeframeLabel}, Pellorn mapped and tracked 284 AI systems and models across the enterprise landscape. Continuous governance monitoring active on ${regionLabel} dedicated environments. ${highRiskCount} systems exhibited elevated risk signals or control exceptions, and ${quarantinedCount} data boundary issues were intercepted with immutable evidence logs recorded. Estimated regulatory exposure mitigated: ${liability}. Unintended operational loss avoided: ${preventedLoss}.`;
 };
 
 // Live interactive threat scenarios that the user can trigger to demo Bastion Audit's defensive triggers!

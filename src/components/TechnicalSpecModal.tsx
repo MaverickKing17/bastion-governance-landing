@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Copy, Check, Printer, FileText, ExternalLink, ShieldAlert, Cpu, HardDrive, CheckCircle2, Linkedin } from 'lucide-react';
+import { X, Copy, Check, Printer, FileText, ExternalLink, ShieldCheck, Cpu, HardDrive, CheckCircle2, Mail, Layers, Compass, BarChart3 } from 'lucide-react';
 
 interface TechnicalSpecModalProps {
   isOpen: boolean;
@@ -8,470 +8,312 @@ interface TechnicalSpecModalProps {
 }
 
 export const TechnicalSpecModal: React.FC<TechnicalSpecModalProps> = ({ isOpen, onClose }) => {
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const specMarkdown = `
-# Bastion Audit — Technical Specification & Architecture Overview
-
-**Author:** Dwayne Benjamin, Principal Security Architect & Founder  
-**Target Audience:** Enterprise Security, Risk, Identity & Access Management (IAM), and Compliance Teams  
-**Status:** v2.8-Stable / Public Draft  
-**Target Environments:** Azure-Native Multi-Tenant / Private Sovereign Cloud  
+  const specMarkdown = `# PELLORN — AI Governance Intelligence Specification
+**Document Version:** 1.0-Draft / Market Validation
+**Target Audience:** CIO, CTO, CISO, CRO, Chief Data Officers, Model Risk & Compliance Leaders
+**Primary Context:** Canadian Financial Services (Toronto, Ontario, Canada) & Global Regulated Markets
+**Status:** Pre-Launch Advisory Review
 
 ---
 
-## 1. Executive Summary & Platform Core
+## 1. Executive Summary & Product Positioning
 
-Bastion Audit is an **Identity-Aware AI Security Posture Management (AI-SPM)** platform designed to continuously audit, intercept, and secure autonomous agentic workflows and Large Language Model (LLM) interactions. 
+**Pellorn** is an enterprise AI Governance Intelligence platform being developed specifically for financial services organizations bringing AI into critical business workflows.
 
-In highly regulated sectors, traditional firewalls cannot interpret the semantic reasoning of autonomous systems. Bastion Audit establishes a real-time policy-enforcement checkpoint, enabling enterprise security teams to monitor and govern the compliance of deployed AI agents without introducing raw data risk, storage overhead, or operational friction.
+As financial institutions accelerate the deployment of models, autonomous agents, and vendor-embedded AI, adoption is outpacing organizational visibility. Systems operate across fragmented departments, lines of business, and infrastructure silos.
+
+Pellorn addresses this fundamental visibility gap through the core paradigm:
+**AI visibility + governance intelligence + evidence + executive oversight.**
+
+Our core operating principle:
+*See what AI is doing. Understand the risk. Strengthen governance. Demonstrate oversight.*
 
 ---
 
-## 2. Deployment & Integration Architecture
+## 2. The Five-Stage Governance Framework
 
-Our platform utilizes an **Azure-First Infrastructure Strategy** designed for enterprise security workflows:
+Pellorn structures enterprise AI oversight across five sequential, interconnected stages:
 
-*   **Microsoft Entra ID Integration:** Federated least-privilege IAM mapping that correlates individual user identities and organizational trust levels directly with downstream AI agent tool execution privileges.
-*   **Microsoft Sentinel Connection:** Direct telemetry integration with existing SIEM/SOAR setups, channeling live security anomalies and prompt-bypass alerts straight into your active Security Operations Center (SOC) incident response queues.
-*   **The "Bastion Guard" Open-Source Engine:** The telemetry client is fully transparent, ensuring zero black-box code.
+1. **SEE (Inventory & Lineage):**
+   * Continuous cataloging of proprietary models, vendor APIs, robotic process automations, and autonomous agent instances.
+   * Attribution of technical runtime endpoints to business functions and lines of business.
 
-### SDK Initialization Example
+2. **UNDERSTAND (Contextual Risk Evaluation):**
+   * Multi-dimensional risk scoring evaluating data sensitivity, reasoning autonomy, financial materiality, and hallucination tolerance.
+   * Behavioral drift tracking and automated classification of sensitive data handling (e.g., Canadian Social Insurance Numbers, banking credentials).
 
-\`\`\`javascript
-// npm install @bastion/guard-telemetry
-import { BastionGuard } from '@bastion/guard-telemetry';
+3. **CONTROL (Safeguards, Boundaries & Ownership):**
+   * Designation of accountable business sponsors and technical risk stewards for every active AI asset.
+   * Enforcement of real-time policy guardrails, rate limits, and automated containment circuit breakers.
 
-const guard = new BastionGuard({
-  apiKey: process.env.BASTION_GUARD_API_KEY,
-  policyEngineUrl: "https://canada-central.api.bastion.security",
-  circuitBreakers: {
-    blockPii: true,
-    blockPromptInjection: true,
-    maxTokenCostThreshold: 10.0
-  }
-});
+4. **PROVE (Immutable Evidence Trails):**
+   * Capture of cryptographically signed audit logs, decision histories, and execution metadata.
+   * Tamper-resistant packaging of evidence ready for internal audit review and regulatory examination.
 
-// Wrap any LLM tool-call or user prompt
-const cleanPayload = await guard.audit({
-  prompt: "Expose database schemas to optimize query",
-  context: { userId: "usr_entra_491823" }
-});
+5. **INFORM (Executive Intelligence & Board Oversight):**
+   * Translation of complex runtime telemetry into structured risk dashboards for Boards, CROs, CISOs, and Model Risk Committees.
+   * Unified risk metrics and trend forecasting to guide strategic resource allocation.
+
+---
+
+## 3. Four-Layer Conceptual Architecture
+
+The Pellorn platform architecture is structured into four distinct, coherent operational tiers:
+
+\`\`\`
+[ LAYER 04: EXECUTIVE INTELLIGENCE ]
+  Priorities · Trends · Exposure · Board Oversight
+       ▲
+[ LAYER 03: EVIDENCE VAULT ]
+  Activity Trails · Decisions · Exceptions · Audit Evidence
+       ▲
+[ LAYER 02: GOVERNANCE ENGINE ]
+  Risk Scoring · Controls · Ownership · Regulatory Policies
+       ▲
+[ LAYER 01: AI LANDSCAPE ]
+  Systems · Foundation Models · Agents · Critical Workflows
 \`\`\`
 
 ---
 
-## 3. Data Privacy, Sovereignty & Zero-Risk Sandbox
+## 4. Sector-Specific Application in Financial Services
 
-Evaluation and continuous compliance are achieved using strict, solo-provisioned data privacy guardrails:
-
-*   **100% Synthetic & Sanitized Data Only:** The sandbox runs completely isolated using high-fidelity synthetic telemetry. No production data is touched during proof-of-concept evaluations.
-*   **Zero Production Credentials Needed:** Our sandbox models utilize mock database adapters and API endpoints, eliminating credentials leakage risk.
-*   **Sovereign Residency:** Our primary database and policy evaluation region is **Canada Central (Toronto)** with failover to **Canada East (Quebec)**. No prompt contents, raw payloads, or telemetry traces are saved permanently or "dialed home" outside sovereign borders.
-
----
-
-## 4. Threat Interception & Compliance Metrics
-
-Bastion Audit operates a dual-engine real-time analysis pipeline:
-
-1.  **Jailbreaks & Prompt Injection Interception:** Inspects incoming prompts to detect system override patterns (e.g., adversarial suffixing, prompt engineering exploits).
-2.  **PII Exfiltration Prevention:** Automatically intercepts, masks, and hashes sensitive data types (e.g., Social Insurance Numbers, Credit Cards, banking credentials) using localized regex-based and semantic models before the payload exits the security boundary.
-3.  **Tool Abuse & Anomalous Tool-Calls:** Verifies LLM-generated function arguments against Entra ID schemas to prevent lateral database crawls.
-
-### Performance Indicators
-*   **Telemetry overhead:** 0.14ms average processing latency.
-*   **Throughput limit:** Scalable to 50,000 requests per minute per regional cell.
+* **Banking:** Real-time visibility into models assisting customer inquiries, fraud anomaly detection algorithms, operational back-office reconciliation, and internal credit scoring engines.
+* **Insurance:** Rigorous oversight of automated claims adjudication, commercial underwriting copilot tools, fraud detection, and policyholder interaction pipelines.
+* **Wealth Management:** Governance of advisor assistance tools, research synthesis engines, automated portfolio rebalancing suggestions, and tax-loss harvesting models with strict fiduciary traceability.
+* **Lending & Fintech:** Defensible validation of credit underwriting models, automated loan servicing communications, and partner API integrations.
 
 ---
 
-## 5. Compliance Mapping Matrix
+## 5. Regulatory Alignment & Canadian Standards
 
-| Standard / Framework | Specific Requirement | Bastion Audit Solution / Control Mapping |
-| :--- | :--- | :--- |
-| **OSFI Guideline E-21** (Operational Risk) | Section 3.2: Governance of automated, non-deterministic system risks. | Continuous audit trails, real-time tool execution verification, and automated millisecond circuit breakers. |
-| **PIPEDA / Bill C-27 (AIDA)** | Clause 12: Protection of Personally Identifiable Information in transit. | Zero-knowledge localized PII masking. PII is encrypted or fully redacted prior to upstream LLM dispatch. |
-| **SOC 2 Type II** | Trust Services Criteria: Security & Confidentiality. | Ephemeral processing pipeline (zero-storage model), full open-source client transparency, and encrypted GPG binary validation. |
+Pellorn is architected with the stringent expectations of regulated financial environments at its foundation:
+
+* **OSFI Guideline E-21 (Operational Risk & Resilience):**
+  Provides automated operational logs and risk metrics to substantiate operational resilience and third-party AI dependency management.
+* **PIPEDA & Canadian AI and Data Act (AIDA / Bill C-27):**
+  Ensures zero unmasked transmission of Personally Identifiable Information (PII) such as Canadian Social Insurance Numbers (SIN) or proprietary account records.
+* **Model Risk Management (MRM / SR 11-7 / OSFI E-23 Standards):**
+  Complements internal model validation teams by providing continuous behavioral tracking, version lineage, and historical decision provenance.
+* **NIST AI Risk Management Framework (AI RMF 1.0):**
+  Aligns governance reporting across the core functions of Govern, Map, Measure, and Manage.
 
 ---
 
-## 6. Author Engagement
+## 6. Data Sovereignty & Zero-Custody Architecture
 
-To schedule a dedicated architectural review, connect with the founder directly on **LinkedIn** or visit our official staging site: **bastion-governance-landing.vercel.app**.
-  `;
+* **Canadian Data Residency:** Telemetry evaluation nodes are targeted for Canadian sovereign cloud infrastructure (Canada Central / Toronto and Canada East / Quebec).
+* **Zero Payload Retention:** Pellorn operates on a non-custodial telemetry model. Customer prompts, proprietary client data, and raw financial payloads are not stored permanently or used for external model training.
+* **Synthetic Evaluation First:** Design partners and prospective evaluators can review Pellorn's governance capabilities in isolated sandboxes using 100% synthetic financial transactions.
+
+---
+
+## 7. Pre-Launch Advisory & Contact
+
+For early access inquiries, architectural reviews, or participation in the Pellorn Advisory Validation Program:
+
+* **Website:** https://pellorn.com
+* **Advisory Contact:** advisory@pellorn.com
+* **Headquarters / Primary Node:** Toronto, Ontario, Canada
+`;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(specMarkdown.trim());
+    navigator.clipboard.writeText(specMarkdown);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   const handlePrint = () => {
-    const printWindow = window.open('', '_blank');
-    if (printWindow) {
-      printWindow.document.write(`
-        <html>
-          <head>
-            <title>Bastion Audit - Technical Specification</title>
-            <style>
-              body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111827; padding: 40px; max-width: 800px; margin: 0 auto; }
-              h1 { border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; font-size: 24px; color: #111827; }
-              h2 { margin-top: 30px; font-size: 18px; color: #1f2937; border-bottom: 1px solid #f3f4f6; padding-bottom: 6px; }
-              h3 { font-size: 14px; color: #374151; }
-              code { background: #f3f4f6; padding: 2px 6px; font-family: monospace; font-size: 13px; border-radius: 4px; }
-              pre { background: #f3f4f6; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px; overflow-x: auto; white-space: pre; }
-              table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-              th, td { border: 1px solid #e5e7eb; padding: 10px; text-align: left; font-size: 13px; }
-              th { background-color: #f9fafb; font-weight: 600; }
-              hr { border: 0; border-top: 1px solid #e5e7eb; margin: 30px 0; }
-              .meta { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
-            </style>
-          </head>
-          <body>
-            ${specMarkdown
-              .replace(/# (.*)/g, '<h1>$1</h1>')
-              .replace(/## (.*)/g, '<h2>$1</h2>')
-              .replace(/### (.*)/g, '<h3>$1</h3>')
-              .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-              .replace(/`([^`]+)`/g, '<code>$1</code>')
-              .replace(/```javascript([\s\S]*?)```/g, '<pre>$1</pre>')
-              .replace(/\|/g, '<!-- table border -->') // basic replacement for printing
-            }
-            <script>window.print();</script>
-          </body>
-        </html>
-      `);
-      printWindow.document.close();
-    }
+    window.print();
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
-          {/* Backdrop blur overlay */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden bg-slate-950/85 backdrop-blur-md">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer"
-          />
-
-          {/* Modal Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="bg-[#080E1A] border border-[#1E3250] rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col shadow-[0_0_80px_rgba(6,182,212,0.15)] relative overflow-hidden z-10"
+            exit={{ opacity: 0, scale: 0.96, y: 10 }}
+            transition={{ duration: 0.25 }}
+            className="bg-slate-900 border border-cyan-500/40 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-[0_0_60px_rgba(6,182,212,0.25)] overflow-hidden"
           >
-            {/* Header branding backdrop decoration */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500" />
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full filter blur-3xl pointer-events-none" />
-
-            {/* Header */}
-            <div className="px-6 py-5 border-b border-[#121E31] flex items-center justify-between shrink-0 select-none">
+            {/* Modal Top Bar */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/90 shrink-0">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-                  <FileText className="w-5.5 h-5.5" />
+                <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+                  <FileText className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-white tracking-wide font-sans">
-                    Bastion Audit Technical Spec
+                  <h3 className="text-sm font-bold text-white tracking-wide font-sans">
+                    PELLORN Technical Specification & Architecture Brief
                   </h3>
-                  <p className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider">
-                    Official v2.8-Stable / Public Draft
+                  <p className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">
+                    Pre-Launch Advisory Document · v1.0
                   </p>
                 </div>
               </div>
 
-              {/* Action utilities */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleCopy}
+                  className="px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer"
                   title="Copy Markdown specification"
-                  className="p-2 text-slate-400 hover:text-white bg-white/5 border border-slate-800 rounded-lg transition-all duration-250 cursor-pointer flex items-center gap-1.5 text-xs font-semibold"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-400" />
-                      <span className="text-emerald-400">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-cyan-400" />
+                      <span className="text-cyan-400 font-bold">Copied</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-cyan-400" />
-                      <span>Copy Markdown</span>
+                      <Copy className="w-3.5 h-3.5 text-slate-400" />
+                      <span>Copy Spec</span>
                     </>
                   )}
                 </button>
 
                 <button
                   onClick={handlePrint}
-                  title="Print / PDF representation"
-                  className="p-2 text-slate-400 hover:text-white bg-white/5 border border-slate-800 rounded-lg transition-all duration-250 cursor-pointer flex items-center gap-1.5 text-xs font-semibold"
+                  className="px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer hidden sm:flex"
+                  title="Print document"
                 >
-                  <Printer className="w-4 h-4 text-cyan-400" />
-                  <span>Print Spec</span>
+                  <Printer className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Print</span>
                 </button>
 
                 <button
                   onClick={onClose}
-                  className="p-2 text-slate-400 hover:text-white bg-white/5 border border-slate-800 hover:border-slate-700 rounded-lg transition-all duration-250 cursor-pointer"
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                  title="Close modal"
                 >
-                  <X className="w-4.5 h-4.5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
-            {/* Immersive Scrollable Document Area */}
-            <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 select-text white-scrollbar">
+            {/* Modal Body / Markdown View */}
+            <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-8 bg-slate-950 font-sans text-slate-300 text-xs sm:text-sm leading-relaxed">
               
-              {/* Document Header Panel */}
-              <div className="bg-[#050A14] border border-[#121E31] rounded-xl p-5 sm:p-6 space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div>
-                    <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight">
-                      Bastion Audit — Technical Specification & Architecture Overview
-                    </h1>
-                    <p className="text-xs text-zinc-400 mt-1.5">
-                      Security & Compliance Framework Evaluation for Sovereign Environments
-                    </p>
-                  </div>
-                  <span className="text-[10px] font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 px-2.5 py-1 rounded font-bold uppercase tracking-wider shrink-0">
-                    Sovereign Release
+              {/* Document Header Card */}
+              <div className="p-6 rounded-xl bg-gradient-to-r from-slate-900 to-[#071324] border border-cyan-500/30 space-y-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono">
+                  <span className="px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 font-bold uppercase">
+                    CONFIDENTIAL PRE-RELEASE DRAFT
+                  </span>
+                  <span className="text-slate-400">
+                    Target: Canadian Financial Institutions
                   </span>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4 border-t border-slate-900/60 font-mono text-[11px] text-zinc-400">
-                  <div>
-                    <span className="text-slate-500">AUTHOR:</span>
-                    <p className="text-white font-sans font-bold mt-0.5">Dwayne Benjamin</p>
-                    <p className="text-cyan-400 text-[10px]">Principal Architect & Founder</p>
-                  </div>
-                  <div>
-                    <span className="text-slate-500">TARGET AUDIENCE:</span>
-                    <p className="text-white font-sans font-bold mt-0.5">Enterprise CISOs & Auditors</p>
-                    <p className="text-slate-500 text-[10px]">IAM, Security Operations</p>
-                  </div>
-                  <div>
-                    <span className="text-slate-500">CLASSIFICATION:</span>
-                    <p className="text-white font-sans font-bold mt-0.5">v2.8-Stable / Public Draft</p>
-                    <p className="text-emerald-400 text-[10px]">Cryptographically Certified</p>
-                  </div>
-                </div>
+                <h1 className="text-2xl font-black text-white tracking-tight">
+                  PELLORN — AI Governance Intelligence Platform
+                </h1>
+                <p className="text-xs text-slate-300">
+                  Architectural specification for technology, risk, compliance, and model-governance leaders.
+                </p>
               </div>
 
-              {/* Section 1: Executive Summary */}
-              <div className="space-y-3">
-                <h2 className="text-sm font-bold text-cyan-400 tracking-wider uppercase font-mono flex items-center gap-2">
+              {/* Section 1 */}
+              <div className="space-y-3 border-b border-slate-900 pb-6">
+                <h2 className="text-base font-bold text-white uppercase font-mono tracking-wider text-cyan-400 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  1. Executive Summary & Platform Core
+                  1. Executive Summary & Positioning
                 </h2>
-                <div className="text-zinc-200 text-sm sm:text-base leading-relaxed space-y-3 font-sans font-medium pl-3.5 border-l border-[#121E31]">
-                  <p>
-                    Bastion Audit operates as an <strong className="text-white font-bold">Identity-Aware AI Security Posture Management (AI-SPM)</strong> control plane designed to continuously audit, intercept, and secure autonomous agentic workflows and LLM interactions.
-                  </p>
-                  <p>
-                    Unlike traditional payload firewalls, Bastion's dual-engine gateway inspects the semantic intent of agent orchestrations, applying real-time compliance validation and safety circuit breakers. This allows organizations to securely harness autonomous agents without exposing critical data or storage boundaries.
-                  </p>
-                </div>
+                <p>
+                  Pellorn is being developed to solve the enterprise visibility gap: organizations are deploying AI across applications, workflows, vendor integrations, and business units faster than they can maintain visibility into those systems.
+                </p>
+                <p>
+                  Rather than functioning merely as a tactical developer runtime filter, Pellorn provides organizational intelligence connecting what AI systems exist, who owns them, what risks they introduce, what controls are operating, and what evidence leadership needs.
+                </p>
               </div>
 
-              {/* Section 2: Deployment & Integration */}
-              <div className="space-y-4">
-                <h2 className="text-sm font-bold text-cyan-400 tracking-wider uppercase font-mono flex items-center gap-2">
+              {/* Section 2: Framework */}
+              <div className="space-y-4 border-b border-slate-900 pb-6">
+                <h2 className="text-base font-bold text-white uppercase font-mono tracking-wider text-cyan-400 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  2. Deployment & Integration Architecture
+                  2. The Five-Stage Framework
                 </h2>
-                <div className="text-zinc-200 text-sm leading-relaxed space-y-4 pl-3.5 border-l border-[#121E31]">
-                  <p className="font-sans font-medium">
-                    The platform is engineered around an <strong className="text-white font-semibold">Azure-First Infrastructure Strategy</strong> to fit perfectly into modern enterprise security systems:
-                  </p>
-                  <ul className="space-y-3 font-sans text-sm font-medium">
-                    <li className="flex gap-3 bg-white/2 p-3.5 rounded-lg border border-[#121E31] hover:border-cyan-500/20 transition-all">
-                      <Cpu className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-white font-bold block mb-0.5">Microsoft Entra ID Federated Access</strong>
-                        Maps enterprise user roles and organizational authorization schemas directly to autonomous AI tool-execution permissions, ensuring strict privilege verification.
-                      </div>
-                    </li>
-                    <li className="flex gap-3 bg-white/2 p-3.5 rounded-lg border border-[#121E31] hover:border-cyan-500/20 transition-all">
-                      <ShieldAlert className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-white font-bold block mb-0.5">Microsoft Sentinel SIEM Integration</strong>
-                        Forwards security events, anomalous agent behavior, and prompt policy bypass alerts into Sentinel dashboards for immediate SOC triage and playbook orchestration.
-                      </div>
-                    </li>
-                  </ul>
-
-                  {/* SDK Code Block */}
-                  <div className="space-y-2 mt-4">
-                    <span className="text-slate-500 font-mono text-xs block">@BASTION/GUARD-TELEMETRY COMPLIANT EXTRACTION SDK</span>
-                    <div className="bg-[#030712] rounded-xl border border-[#1E3250] overflow-hidden">
-                      <div className="bg-[#050B15] px-4 py-2 border-b border-[#121E31] flex justify-between items-center text-[10px] font-mono text-slate-500">
-                        <span>main.ts</span>
-                        <span className="text-emerald-400">GPG SIGNED</span>
-                      </div>
-                      <pre className="p-4 overflow-x-auto text-xs font-mono text-zinc-300 leading-relaxed white-scrollbar">
-{`// npm install @bastion/guard-telemetry
-import { BastionGuard } from '@bastion/guard-telemetry';
-
-const guard = new BastionGuard({
-  apiKey: process.env.BASTION_GUARD_API_KEY,
-  policyEngineUrl: "https://canada-central.api.bastion.security",
-  circuitBreakers: {
-    blockPii: true,
-    blockPromptInjection: true,
-    maxTokenCostThreshold: 10.0
-  }
-});
-
-// Intercept tool-calls and active model payloads
-const verifiedPayload = await guard.audit({
-  prompt: "Expose database schemas to optimize query",
-  context: { userId: "usr_entra_491823" }
-});`}
-                      </pre>
+                <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                  {[
+                    { title: 'SEE', q: 'What AI exists?' },
+                    { title: 'UNDERSTAND', q: 'What risks exist?' },
+                    { title: 'CONTROL', q: 'What safeguards exist?' },
+                    { title: 'PROVE', q: 'Can we demonstrate it?' },
+                    { title: 'INFORM', q: 'Can leadership act?' },
+                  ].map((s, i) => (
+                    <div key={i} className="p-3 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                      <div className="font-mono text-xs font-bold text-cyan-400">0{i+1}. {s.title}</div>
+                      <div className="text-[11px] text-slate-300">{s.q}</div>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Section 3: Architecture */}
+              <div className="space-y-3 border-b border-slate-900 pb-6">
+                <h2 className="text-base font-bold text-white uppercase font-mono tracking-wider text-cyan-400 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  3. Four Conceptual Layers
+                </h2>
+                <div className="space-y-2">
+                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                    <span className="font-mono text-xs font-bold text-white">LAYER 4: EXECUTIVE INTELLIGENCE</span> — Priorities, trends, exposure, and board-level risk summaries.
+                  </div>
+                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                    <span className="font-mono text-xs font-bold text-white">LAYER 3: EVIDENCE</span> — Activity, decisions, exception alerts, and tamper-resistant audit logs.
+                  </div>
+                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                    <span className="font-mono text-xs font-bold text-white">LAYER 2: GOVERNANCE</span> — Risk, controls, line-of-business ownership, and policy frameworks.
+                  </div>
+                  <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+                    <span className="font-mono text-xs font-bold text-white">LAYER 1: AI LANDSCAPE</span> — Proprietary systems, foundation models, agents, and vendor workflows.
                   </div>
                 </div>
               </div>
 
-              {/* Section 3: Sovereignty & Sandbox */}
-              <div className="space-y-3">
-                <h2 className="text-sm font-bold text-cyan-400 tracking-wider uppercase font-mono flex items-center gap-2">
+              {/* Section 4: Regulated Alignment */}
+              <div className="space-y-3 border-b border-slate-900 pb-6">
+                <h2 className="text-base font-bold text-white uppercase font-mono tracking-wider text-cyan-400 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  3. Data Privacy, Sovereignty & Zero-Risk Sandbox
+                  4. Canadian Regulatory Alignment
                 </h2>
-                <div className="text-zinc-200 text-sm leading-relaxed space-y-4 pl-3.5 border-l border-[#121E31]">
-                  <p className="font-sans font-medium">
-                    The evaluation environment operates under strict, sovereign-first guardrails to guarantee absolute data protection:
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans font-medium text-xs">
-                    <div className="p-4 rounded-lg bg-white/2 border border-[#121E31] space-y-2">
-                      <strong className="text-white font-bold block text-sm">Synthetic Mock Data</strong>
-                      <p className="text-zinc-300 leading-relaxed">
-                        100% synthetic agent traces and mock data parameters. Zero production credentials required.
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-white/2 border border-[#121E31] space-y-2">
-                      <strong className="text-white font-bold block text-sm">Zero Leakage Logs</strong>
-                      <p className="text-zinc-300 leading-relaxed">
-                        All traces are compiled transiently. Payloads are never saved or transmitted outside the compliance sandbox.
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-white/2 border border-[#121E31] space-y-2">
-                      <strong className="text-white font-bold block text-sm">Sovereign Residency</strong>
-                      <p className="text-zinc-300 leading-relaxed">
-                        Regional instances operate inside Canada Central (Toronto) with real-time failover to Canada East (Quebec).
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <ul className="space-y-2 text-xs">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>OSFI Guideline E-21:</strong> Automated mapping of operational risk, third-party technology dependencies, and governance records.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>PIPEDA / AIDA:</strong> Zero unmasked storage of sensitive Canadian customer PII including Social Insurance Numbers (SIN).</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>Sovereign Canadian Hosting:</strong> Architectural compatibility with Canada Central (Toronto) cloud regions.</span>
+                  </li>
+                </ul>
               </div>
 
-              {/* Section 4: Threat Interception */}
-              <div className="space-y-3">
-                <h2 className="text-sm font-bold text-cyan-400 tracking-wider uppercase font-mono flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  4. Threat Interception & Compliance Metrics
-                </h2>
-                <div className="text-zinc-200 text-sm leading-relaxed space-y-3 pl-3.5 border-l border-[#121E31]">
-                  <p className="font-sans font-medium">
-                    The gateway deploys dual-engine heuristic classifiers to audit and intercept adversarial anomalies:
-                  </p>
-                  <ul className="space-y-2 font-sans font-medium text-sm text-zinc-300">
-                    <li className="flex items-start gap-2">
-                      <span className="text-cyan-400 font-bold font-mono mt-0.5">·</span>
-                      <span><strong className="text-white">System Overrides:</strong> Stops adversarial prompts attempting to bypass native LLM constraints.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-cyan-400 font-bold font-mono mt-0.5">·</span>
-                      <span><strong className="text-white">Zero-Knowledge PII Masking:</strong> Automatically redacts credentials and Social Insurance Numbers at the boundary.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-cyan-400 font-bold font-mono mt-0.5">·</span>
-                      <span><strong className="text-white">Interception Footprint:</strong> Real-time audit with a microscopic overhead averaging <strong className="text-emerald-400">0.14ms</strong>.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Section 5: Compliance Table */}
-              <div className="space-y-3">
-                <h2 className="text-sm font-bold text-cyan-400 tracking-wider uppercase font-mono flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  5. Regulatory & Compliance Matrix
-                </h2>
-                <div className="pl-3.5 border-l border-[#121E31] overflow-x-auto">
-                  <table className="w-full text-left border-collapse text-xs font-sans font-semibold">
-                    <thead>
-                      <tr className="border-b border-[#1E3250] text-slate-400 font-mono">
-                        <th className="py-3 px-4 font-bold uppercase tracking-wider">Regulatory Standard</th>
-                        <th className="py-3 px-4 font-bold uppercase tracking-wider">Specific Requirement</th>
-                        <th className="py-3 px-4 font-bold uppercase tracking-wider">Bastion Audit Solution</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-[#121E31] text-zinc-200">
-                      <tr className="hover:bg-white/2 transition-colors">
-                        <td className="py-4 px-4 text-white font-extrabold font-mono text-[11px] max-w-[120px]">OSFI E-21</td>
-                        <td className="py-4 px-4 max-w-xs">Section 3.2: Governance of automated, non-deterministic system risks.</td>
-                        <td className="py-4 px-4 text-zinc-300">Continuous auditable telemetry, system state tracing, and localized millisecond policy circuit breakers.</td>
-                      </tr>
-                      <tr className="hover:bg-white/2 transition-colors">
-                        <td className="py-4 px-4 text-white font-extrabold font-mono text-[11px] max-w-[120px]">PIPEDA / Bill C-27</td>
-                        <td className="py-4 px-4 max-w-xs">Clause 12: Rigorous masking of PII in model data transfers.</td>
-                        <td className="py-4 px-4 text-zinc-300">Semantic parsing layers and regex redactors redact files, credit cards, and SINs on-the-fly before they ever exit.</td>
-                      </tr>
-                      <tr className="hover:bg-white/2 transition-colors">
-                        <td className="py-4 px-4 text-white font-extrabold font-mono text-[11px] max-w-[120px]">SOC 2 Type II</td>
-                        <td className="py-4 px-4 max-w-xs">Security & Confidentiality: Safeguarding analytical data pools.</td>
-                        <td className="py-4 px-4 text-zinc-300">Fully transparent open-source SDK architecture, isolated staging cells, and cryptographically verified GPG signatures.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* Founder Section */}
-              <div className="bg-gradient-to-r from-[#0C1524] to-[#0A1220] border border-cyan-500/20 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div className="space-y-1 text-center sm:text-left">
-                  <h4 className="text-sm font-bold text-white tracking-wide font-sans">
-                    Schedule an Architectural Deep Dive
-                  </h4>
-                  <p className="text-xs text-zinc-400 font-sans font-medium">
-                    Discuss sovereign deployment boundaries or review our security blueprints directly with the founder.
+              {/* Section 5: Advisory Contact */}
+              <div className="p-5 rounded-xl bg-slate-900/90 border border-cyan-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-sm font-bold text-white">Pellorn Advisory Desk</h4>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    For questions regarding this technical brief or to schedule a founder review.
                   </p>
                 </div>
-                <div className="flex flex-wrap items-center gap-3 shrink-0">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-4 py-2.5 bg-[#0077b5] hover:bg-[#0077b5]/85 text-white rounded-lg text-xs font-bold uppercase tracking-wider font-mono flex items-center gap-2 transition-all"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                    <span>Founder LinkedIn</span>
-                  </a>
-                  <a
-                    href="https://bastion-governance-landing.vercel.app"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-slate-800 text-white rounded-lg text-xs font-bold uppercase tracking-wider font-mono flex items-center gap-1.5 transition-all"
-                  >
-                    <span>Staging Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                <div className="font-mono text-xs text-cyan-400 bg-cyan-950/60 px-3 py-1.5 rounded border border-cyan-500/30">
+                  advisory@pellorn.com
                 </div>
               </div>
 
             </div>
 
-            {/* Footer */}
-            <div className="px-6 py-4 bg-[#050B15] border-t border-[#121E31] flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-slate-500 shrink-0 select-none">
-              <span>SECURITY CLASSIFICATION: COMMERCIAL-CONFIDENTIAL</span>
-              <span>&copy; 2026 Bastion Audit Inc. All rights reserved.</span>
+            {/* Modal Bottom Bar */}
+            <div className="px-6 py-3 border-t border-slate-800 bg-slate-950 flex items-center justify-between text-[11px] font-mono text-slate-500 shrink-0">
+              <div>PELLORN · MARKET VALIDATION STAGE</div>
+              <div>TORONTO · ONTARIO · CANADA</div>
             </div>
           </motion.div>
         </div>

@@ -172,29 +172,29 @@ export const DemoShowcase: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-sky-400 font-mono">
-            Interactive Command Deck
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white font-sans">
-            AI Control Plane Sandbox
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-[10px] uppercase tracking-wider font-bold">
+            Interactive Intelligence Console
+          </div>
+          <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-sans leading-tight">
+            One intelligence layer for the AI landscape
           </h3>
-          <p className="text-slate-300 text-sm leading-relaxed font-medium">
-            Take command of our high-fidelity secure gateway operations console. Trigger mock threat scenarios, rotate regional jurisdictions, or activate the emergency lockdown to preview Bastion Audit's core architecture.
+          <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans max-w-2xl mx-auto">
+            Pellorn brings AI systems, risk signals, controls and evidence into a unified view — helping technology, risk and governance teams build a clearer picture of the organization's AI landscape.
           </p>
         </div>
 
         {/* Small Label above the browser container */}
         <div className="flex justify-center select-none">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-cyan-300 uppercase">
-              Interactive Enterprise Command Center
+              Financial Services AI Intelligence Prototype
             </span>
           </div>
         </div>
 
         {/* Browser Frame Structure - Enhanced for enterprise centerpiece look */}
-        <div className="max-w-7xl mx-auto w-full bg-[#050C16] rounded-2xl border-2 border-sky-500/35 shadow-[0_0_80px_rgba(14,165,233,0.25)] hover:border-sky-400/60 hover:shadow-[0_0_100px_rgba(14,165,233,0.35)] transition-all duration-500 overflow-hidden flex flex-col h-[900px] relative">
+        <div className="max-w-7xl mx-auto w-full bg-[#050C16] rounded-2xl border-2 border-cyan-500/35 shadow-[0_0_80px_rgba(6,182,212,0.2)] hover:border-cyan-400/60 hover:shadow-[0_0_100px_rgba(6,182,212,0.3)] transition-all duration-500 overflow-hidden flex flex-col h-[900px] relative">
           
           {/* Header Bar */}
           <div className="h-11 bg-slate-950 px-4 flex items-center justify-between border-b border-slate-800/80 shrink-0 select-none">
@@ -206,8 +206,8 @@ export const DemoShowcase: React.FC = () => {
             </div>
 
             {/* Browser Address bar */}
-            <div className="bg-slate-900 border border-slate-800 rounded-md px-3 py-1 text-[10px] font-mono text-slate-400 w-1/3 text-center truncate select-all">
-              console.bastion.security/sandbox/tenant_global
+            <div className="bg-slate-900 border border-slate-800 rounded-md px-3 py-1 text-[10px] font-mono text-cyan-300 w-1/3 text-center truncate select-all">
+              console.pellorn.com/governance/enterprise-landscape
             </div>
 
             {/* Connection badge */}
@@ -243,10 +243,10 @@ export const DemoShowcase: React.FC = () => {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
                   <div>
                     <h4 className="text-lg font-extrabold tracking-tight text-white uppercase font-sans">
-                      AI Governance Command Center
+                      Pellorn Intelligence Command Console
                     </h4>
                     <p className="text-[10px] md:text-xs text-slate-400">
-                      Real-Time Oversight of Autonomous Enterprise Agents
+                      Unified Oversight of Financial Services AI Landscape
                     </p>
                   </div>
                   <div className="bg-slate-850/80 border border-slate-800 rounded px-2.5 py-1 flex items-center gap-2">

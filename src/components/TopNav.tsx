@@ -37,13 +37,13 @@ export const TopNav: React.FC<TopNavProps> = ({
         </div>
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="font-sans font-bold text-lg text-white tracking-wider uppercase">Bastion Audit</h1>
-            <span className="text-[9px] font-mono tracking-widest bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded uppercase">
-              v2.8-STABLE
+            <h1 className="font-sans font-bold text-lg text-white tracking-wider uppercase">PELLORN</h1>
+            <span className="text-[9px] font-mono tracking-widest bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 px-1.5 py-0.5 rounded uppercase">
+              PRE-LAUNCH EVALUATION
             </span>
           </div>
           <p className="text-[10px] font-mono text-slate-400 tracking-widest uppercase">
-            ENTERPRISE AI GOVERNANCE GATEWAY
+            AI GOVERNANCE INTELLIGENCE CONSOLE
           </p>
         </div>
       </div>
